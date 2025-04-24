@@ -37,5 +37,9 @@ public class Board {
 		board.reroll(2);
 		System.out.println(board);
 	}
+	
+	public ArrayList<Dice> sendYourself() {
+		return fiveDice;
+	}
 
 }

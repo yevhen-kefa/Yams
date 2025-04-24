@@ -48,13 +48,14 @@ public class Yams {
 				
 		        try {
 					var selectedDie = Integer.parseInt(scanner.nextLine());
-					if (selectedDie >= 0 && selectedDie <= 5) {
-						selected.add(selectedDie);
-						break;
+					
+					if (selected.contains(selectedDie)) {
+						System.out.println("You already selected this Die, choose another one.");
 					}
 					
-					else if (selected.contains(selectedDie)) {
-						System.out.println("You already selected this Die, choose another one.");
+					else if (selectedDie >= 0 && selectedDie <= 5) {
+						selected.add(selectedDie);
+						break;
 					}
 					
 					else {
@@ -70,27 +71,47 @@ public class Yams {
 	}
 
 	private static String askCombination(Scanner scanner) {
-		System.out.println("Please choose a combination to score in your score sheet by entering its first letter.");
+		System.out.println("Please choose a combination to score in your score sheet or to sacrifice by entering its first letter.");
 		System.out.print("Enter a Combination: ");
 		
 		var choice = scanner.nextLine();
 		return choice;
 	}
 
-	private static Combination parseCombination(String combinationName) {
-
-		return switch (combinationName) {
-		//Ajout de toutes les combinaisons
-		case "C" -> new Chance();
-		case "T" -> new ThreeOfAKind();
-		case "FK" -> new FourOfAKind();
-		case "F" -> new FullHouse();
-		case "S" -> new SmallStraight();
-		case "L" -> new LargeStraight();
-		case "Y" -> new Yam();
-		default -> throw new IllegalArgumentException("Unexpected value: " + combinationName);
-		};
+	private static CombinationResult parseCombination(String combinationName, Board board) {
+	    return switch (combinationName) {
+	        case "C" -> {
+	            var combo = new Chance();
+	            yield combo.amITheRightOne(board.sendYourself()) ? new CombinationResult(combo,true) : new CombinationResult(combo,false);
+	        }
+	        case "T" -> {
+	            var combo = new ThreeOfAKind();
+	            yield combo.amITheRightOne(board.sendYourself()) ? new CombinationResult(combo,true) : new CombinationResult(combo,false);
+	        }
+	        case "FK" -> {
+	            var combo = new FourOfAKind();
+	            yield combo.amITheRightOne(board.sendYourself()) ? new CombinationResult(combo,true) : new CombinationResult(combo,false);
+	        }
+	        case "F" -> {
+	            var combo = new FullHouse();
+	            yield combo.amITheRightOne(board.sendYourself()) ? new CombinationResult(combo,true) : new CombinationResult(combo,false);
+	        }
+	        case "S" -> {
+	            var combo = new SmallStraight();
+	            yield combo.amITheRightOne(board.sendYourself()) ? new CombinationResult(combo,true) : new CombinationResult(combo,false);
+	        }
+	        case "L" -> {
+	            var combo = new LargeStraight();
+	            yield combo.amITheRightOne(board.sendYourself()) ? new CombinationResult(combo,true) : new CombinationResult(combo,false);
+	        }
+	        case "Y" -> {
+	            var combo = new Yam();
+	            yield combo.amITheRightOne(board.sendYourself()) ? new CombinationResult(combo,true) : new CombinationResult(combo,false);
+	        }
+	        default -> throw new IllegalArgumentException("Unexpected value: " + combinationName);
+	    };
 	}
+
 
 	public static void main(String[] args) {
 
@@ -123,22 +144,27 @@ public class Yams {
 					break;
 				}
 			}
-			Combination combinationChoice;
+			CombinationResult result;
 
 			while (true) {
 			    try {
-			        combinationChoice = parseCombination(askCombination(scanner));
-			        break;
+			        result = parseCombination(askCombination(scanner), board);
+			        if(scoreSheet.sendScoreMap().containsKey(result.combination()) && scoreSheet.sendScoreMap().get(result.combination()) == null) {
+			        	System.out.println("This cell was already sacrificed, choose another one.");
+					}
+			        else {
+			        	scoreSheet.updateScore(result, board);
+			        	break;
+			        }	
 
 			    } catch (IllegalArgumentException e) {
 			        System.out.println("Invalid input. Please enter a valid combination that isn't already in the scoresheet");
 			        System.out.println("C, F, FK, L, S, T, Y.");
-			    }
+			    } 
 			}
 			
-			scoreSheet.updateScore(combinationChoice, board);
 			System.out.println(scoreSheet);
 		}
-		System.out.println("C'est fini !");
+		System.out.println("C'est fini ! Votre score final est de : " + scoreSheet.scoreTotal() + " points !");
 	}
 }

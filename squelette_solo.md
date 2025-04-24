@@ -95,7 +95,7 @@ Yams (main)
        ├── FourOfAKind
        ├── SmallStraight
        ├── LargeStraight
-       └── Yam's
+       └── Yam
 ```
 
 ---
@@ -104,9 +104,21 @@ Yams (main)
 
 > Listez ici les classes ou méthodes que vous avez créées ou modifiées pour répondre au cahier des charges.
 
-- Création : _______________________________________________  
-- Modification : ____________________________________________  
-- Tests réalisés : __________________________________________  
+- Création : 
+- [ ] askReroll(Scanner scanner)
+- [ ] askWhichDices(int choice, Scanner scanner)
+- [ ] Chance.class
+- [ ] FourOfAKind.class
+- [ ] SmallStraight.class
+- [ ] LargeStraight.class
+- [ ] Yam.class
+- Modification :
+- [ ] main(String[] args) 
+- [ ] parseCombination(String combinationName)
+- Tests réalisés :
+- [ ] Rentrer des valeures null ou invalides lors du choix des des et des relances
+- [ ] Rentrer des combinaisons invalides ou null dans le choix des combinaisons
+
 
 ---
 
@@ -125,3 +137,5 @@ Yams (main)
 ## ✍️ Commentaires personnels 
 
 > Vous pouvez expliquer ici ce que vous avez appris, aimé ou trouvé difficile dans l’exercice.
+
+trouver des solutions elegantes et en accord avec les habitudes enseignees en TP et en TD etait enrichissant.

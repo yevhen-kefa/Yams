@@ -7,12 +7,22 @@ public class ScoreSheet {
 
 	private final HashMap<Combination, Integer> scoreMap = new HashMap<>();
 
-	public void updateScore(Combination pattern, Board board) {
+	public void updateScore(CombinationResult pattern, Board board) {
 		Objects.requireNonNull(pattern);
-		if (scoreMap.containsKey(pattern)) {
-			throw new IllegalArgumentException("already a score for this combination");
+		System.out.println(pattern);
+		if (!scoreMap.containsKey(pattern.combination()) && pattern.success()) {
+			scoreMap.put(pattern.combination(), pattern.combination().score(board));
 		}
-		scoreMap.put(pattern, pattern.score(board));
+		else if (scoreMap.containsKey(pattern.combination()) | !pattern.success()) {
+			scoreMap.put(pattern.combination(), null);
+			System.out.println("Your combination could not be added to the board, you thus sacrificed the " + pattern.combination() + " cell.");
+		}
+		
+		
+	}
+	
+	public HashMap<Combination, Integer> sendScoreMap() {
+		return scoreMap;
 	}
 
 	public int scoreTotal() {
