@@ -14,7 +14,7 @@ public class ScoreSheet {
 			scoreMap.put(pattern.combination(), pattern.combination().score(board));
 		}
 		else if (scoreMap.containsKey(pattern.combination()) | !pattern.success()) {
-			scoreMap.put(pattern.combination(), null);
+			scoreMap.put(pattern.combination(), 0);
 			System.out.println("Your combination could not be added to the board, you thus sacrificed the " + pattern.combination() + " cell.");
 		}
 		

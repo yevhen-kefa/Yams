@@ -76,6 +76,7 @@ _Apres quoi nous avons plonge individuellement dans chaque methode statique et c
 - Ajout de nouvelles methodes statiques
 - Usage du polymorphisme
 - Ajout de "try...catch" afin de detecter des entrees invalides et d'y repondre de maniere appropriee
+- Modification de methodes existantes et creation de nouvelles methodes
 
 ---
 
@@ -88,6 +89,7 @@ Yams (main)
  ├── Board
  │    └── Dice x5
  ├── ScoreSheet
+       └── CombinationResult
  └── Combination (interface)
        ├── FullHouse
        ├── ThreeOfAKind
@@ -96,6 +98,7 @@ Yams (main)
        ├── SmallStraight
        ├── LargeStraight
        └── Yam
+       
 ```
 
 ---
@@ -112,12 +115,21 @@ Yams (main)
 - [ ] SmallStraight.class
 - [ ] LargeStraight.class
 - [ ] Yam.class
+- [ ] CombinationResult.class
+
 - Modification :
 - [ ] main(String[] args) 
 - [ ] parseCombination(String combinationName)
+- [ ] parseCombination()
+- [ ] scoreSheet.class
+- [ ] Board.class
+
 - Tests réalisés :
 - [ ] Rentrer des valeures null ou invalides lors du choix des des et des relances
 - [ ] Rentrer des combinaisons invalides ou null dans le choix des combinaisons
+- [ ] Rentrer des combinaisons deja presentes mais pas appropriees dans le choix des combinaisons
+- [ ] Rentrer des combinaisons deja presentes appropriees dans le choix des combinaisons
+- [ ] Rentrer des combinaisons non presentes et pas appropriees dans le choix des combinaisons
 
 
 ---

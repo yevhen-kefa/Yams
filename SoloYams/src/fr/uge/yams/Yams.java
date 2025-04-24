@@ -149,7 +149,7 @@ public class Yams {
 			while (true) {
 			    try {
 			        result = parseCombination(askCombination(scanner), board);
-			        if(scoreSheet.sendScoreMap().containsKey(result.combination()) && scoreSheet.sendScoreMap().get(result.combination()) == null) {
+			        if(scoreSheet.sendScoreMap().containsKey(result.combination()) && scoreSheet.sendScoreMap().get(result.combination()) == 0) {
 			        	System.out.println("This cell was already sacrificed, choose another one.");
 					}
 			        else {
