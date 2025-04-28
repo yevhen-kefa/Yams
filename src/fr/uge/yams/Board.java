@@ -3,7 +3,6 @@ package fr.uge.yams;
 import java.util.ArrayList;
 
 public class Board {
-
 	private final ArrayList<Dice> fiveDice = new ArrayList<Dice>();
 
 	public Board() {
@@ -29,13 +28,4 @@ public class Board {
 		}
 		fiveDice.set(pos - 1, new Dice());
 	}
-
-	public static void main(String[] args) {
-
-		var board = new Board();
-		System.out.println(board);
-		board.reroll(2);
-		System.out.println(board);
-	}
-
 }

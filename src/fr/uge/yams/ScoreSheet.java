@@ -3,13 +3,13 @@ package fr.uge.yams;
 import java.util.HashMap;
 import java.util.Objects;
 
-import fr.uge.yams.combinations.ICombination;
+import fr.uge.yams.combinations.Combination;
 
 public class ScoreSheet {
 
-	private final HashMap<ICombination, Integer> scoreMap = new HashMap<>();
+	private final HashMap<Combination, Integer> scoreMap = new HashMap<>();
 
-	public void updateScore(ICombination pattern, Board board) {
+	public void updateScore(Combination pattern, Board board) {
 		Objects.requireNonNull(pattern);
 		if (scoreMap.containsKey(pattern)) {
 			throw new IllegalArgumentException("already a score for this combination");
