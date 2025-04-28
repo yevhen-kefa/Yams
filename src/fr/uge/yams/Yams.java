@@ -43,8 +43,7 @@ public class Yams {
 			System.out.println("Welcome in round " + (roundCounter + 1));
 			var board = new Board();
 			System.out.println(board);
-
-      // Relances dans le tour
+      
 			for (var updateCounter = 0; updateCounter < 3; updateCounter++) {
 				var choice = askReroll(scanner);
 				if (choice > 0) {
@@ -54,7 +53,6 @@ public class Yams {
 					break;
 				}
 			}
-
 			var combinationChoice = askCombination(scanner);
 			scoreSheet.updateScore(combinationChoice, board);
 			System.out.println(scoreSheet);
