@@ -6,8 +6,20 @@ import java.util.Objects;
 import fr.uge.yams.combinations.Combination;
 
 public class ScoreSheet {
-
+  private final String playerName;
 	private final HashMap<Combination, Integer> scoreMap = new HashMap<>();
+
+  public ScoreSheet(String playerName) {
+    this.playerName = Objects.requireNonNull(playerName);
+  }
+
+  public String name() {
+    return isBot() ? "Bot" : playerName;
+  }
+
+  public boolean isBot() {
+    return playerName.equals("");
+  }
 
 	public void updateScore(Combination pattern, Board board) {
 		Objects.requireNonNull(pattern);
@@ -23,7 +35,12 @@ public class ScoreSheet {
 
 	@Override
 	public String toString() {
-		return scoreMap.toString();
+		var builder = new StringBuilder();
+    builder.append(name()).append(System.lineSeparator());
+    for (var entry : scoreMap.entrySet()) {
+      builder.append(entry.getKey()).append(" : ").append(entry.getValue()).append(System.lineSeparator());
+    }
+    builder.append("Total : ").append(scoreTotal()).append(System.lineSeparator());
+    return builder.toString();
 	}
-
 }
