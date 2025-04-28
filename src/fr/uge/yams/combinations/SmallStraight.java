@@ -28,5 +28,5 @@ public record SmallStraight() implements Combination {
   public String toString() {
     return "Small Straight";
   }
-  
+
 }

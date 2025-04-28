@@ -1,5 +1,7 @@
 package fr.uge.yams.combinations;
 
+import java.util.Random;
+
 import fr.uge.yams.Board;
 
 /**
@@ -51,6 +53,26 @@ public interface Combination {
       case "L" -> new LargeStraight();
       case "H" -> new FullHouse();
       default -> throw new IllegalArgumentException("Unexpected value: " + label);
+    };
+  }
+
+  /**
+   * Creates a random {@link Combination} instance.
+   * <p>
+   * The method randomly selects one of the predefined combinations.
+   * 
+   * @return a random {@link Combination}
+   */
+  public static Combination of() {
+    var pick = new Random().nextInt(6);
+    return switch (pick) {
+        case 0 -> new Chance();
+        case 1 -> new ThreeOfAKind();
+        case 2 -> new FourOfAKind();
+        case 3 -> new SmallStraight();
+        case 4 -> new LargeStraight();
+        case 5 -> new FullHouse();
+        default -> throw new AssertionError("Unexpected random value: " + pick);
     };
   }
 }
