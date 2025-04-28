@@ -22,16 +22,16 @@ public record FullHouse() implements Combination {
     return three && pair;
   }
 
-	@Override
-	public int score(Board board) {
+  @Override
+  public int score(Board board) {
     if (!valid(board)) {
       return 0;
     }
-		return 25;
-	}
+    return 25;
+  }
 
-	@Override
-	public String toString() {
-		return "Full House";
-	}
+  @Override
+  public String toString() {
+    return "Full House";
+  }
 }

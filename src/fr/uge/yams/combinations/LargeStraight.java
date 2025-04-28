@@ -14,6 +14,7 @@ public record LargeStraight() implements Combination {
     return (count[1] > 0 && count[2] > 0 && count[3] > 0 && count[4] > 0 && count[5] > 0)
         || (count[2] > 0 && count[3] > 0 && count[4] > 0 && count[5] > 0 && count[6] > 0);
   }
+
   @Override
   public int score(Board board) {
     if (!valid(board)) {
@@ -21,6 +22,7 @@ public record LargeStraight() implements Combination {
     }
     return 40;
   }
+
   @Override
   public String toString() {
     return "Large Straight";

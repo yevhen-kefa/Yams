@@ -6,36 +6,36 @@ import java.util.Scanner;
 import fr.uge.yams.combinations.Combination;
 
 public class Yams {
-	private static ScoreSheet init(Scanner scanner) {
-		System.out.println("Welcome, player, please enter your name.");
+  private static ScoreSheet init(Scanner scanner) {
+    System.out.println("Welcome, player, please enter your name.");
     return new ScoreSheet(scanner.nextLine());
-	}
+  }
 
   private static ScoreSheet friend(Scanner scanner) {
     System.out.println("Input your friend's name or leave empty to allow the bot play!!.");
     return new ScoreSheet(scanner.nextLine());
   }
 
-	private static int askReroll(Scanner scanner) {
-		System.out.println("Do you want to reroll a dice? Type 0 for no, 1-5 to reroll this dice.");
-		var choice = scanner.nextLine();
+  private static int askReroll(Scanner scanner) {
+    System.out.println("Do you want to reroll a dice? Type 0 for no, 1-5 to reroll this dice.");
+    var choice = scanner.nextLine();
     try {
       return Integer.parseInt(choice);
     } catch (NumberFormatException e) {
       System.out.println("Please enter a number between 0 and 5.");
       return askReroll(scanner);
     }
-	}
+  }
 
-	private static Combination askCombination(Scanner scanner) {
-		System.out.println("Please choose a combination to score in your score sheet by entering its first letter.");
+  private static Combination askCombination(Scanner scanner) {
+    System.out.println("Please choose a combination to score in your score sheet by entering its first letter.");
     try {
       return Combination.of(scanner.nextLine());
     } catch (IllegalArgumentException e) {
       System.out.println("Please enter a valid combination.");
       return askCombination(scanner);
     }
-	}
+  }
 
   private static void makeRandomMove(ScoreSheet player, Board board) {
     var rerolls = new Random().nextInt(3);
@@ -51,8 +51,8 @@ public class Yams {
     player.updateScore(pattern, board);
   }
 
-	public static void main(String[] args) {
-		var scanner = new Scanner(System.in);
+  public static void main(String[] args) {
+    var scanner = new Scanner(System.in);
 
     var player = init(scanner);
     System.out.println("Hello " + player.name() + ", and good luck !\n");
@@ -62,7 +62,7 @@ public class Yams {
 
     var turnPlayer = true;
     // Début du tour du joueur
-		for (var roundCounter = 0; roundCounter < 26; roundCounter++) {
+    for (var roundCounter = 0; roundCounter < 26; roundCounter++) {
 
       if (friend.isBot() && !turnPlayer) {
         makeRandomMove(friend, new Board());
@@ -71,20 +71,20 @@ public class Yams {
         continue;
       }
 
-			System.out.println(turnPlayer ? player.name() : friend.name() + ", Welcome in round " + (roundCounter + 1) / 2);
-			var board = new Board();
-			System.out.println(board);
-      
-			for (var updateCounter = 0; updateCounter < 3; updateCounter++) {
-				var choice = askReroll(scanner);
+      System.out.println(turnPlayer ? player.name() : friend.name() + ", Welcome in round " + (roundCounter + 1) / 2);
+      var board = new Board();
+      System.out.println(board);
+
+      for (var updateCounter = 0; updateCounter < 3; updateCounter++) {
+        var choice = askReroll(scanner);
         if (choice == 0)
           break;
 
         board.reroll(choice);
         System.out.println(board);
-				
-			}
-			var combinationChoice = askCombination(scanner);
+
+      }
+      var combinationChoice = askCombination(scanner);
       if (turnPlayer) {
         player.updateScore(combinationChoice, board);
         System.out.println(player);
@@ -94,8 +94,8 @@ public class Yams {
       }
 
       turnPlayer = !turnPlayer;
-		}
-		System.out.println("Game Over!");
-	}
+    }
+    System.out.println("Game Over!");
+  }
 
 }
