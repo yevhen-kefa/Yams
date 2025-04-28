@@ -31,6 +31,6 @@ public class Board {
 		if (pos < 1 || pos > 5) {
 			throw new IllegalArgumentException();
 		}
-		dices.set(pos, new Dice());
+		dices.set(pos-1, new Dice());
 	}
 }
