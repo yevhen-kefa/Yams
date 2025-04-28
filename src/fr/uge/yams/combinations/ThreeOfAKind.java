@@ -1,16 +1,16 @@
-package fr.uge.yams;
+package fr.uge.yams.combinations;
+
+import fr.uge.yams.Board;
 
 public record ThreeOfAKind() implements Combination {
 
-	@Override
+  @Override
 	public int score(Board board) {
-
 		return 15;
 	}
 
-	@Override
+  @Override
 	public String toString() {
-
 		return "Three of A Kind";
 	}
 

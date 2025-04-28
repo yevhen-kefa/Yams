@@ -2,6 +2,10 @@ package fr.uge.yams;
 
 import java.util.Scanner;
 
+import fr.uge.yams.combinations.Combination;
+import fr.uge.yams.combinations.ThreeOfAKind;
+import fr.uge.yams.combinations.FullHouse;
+
 public class Yams {
 
 	public static String init(Scanner scanner) {
