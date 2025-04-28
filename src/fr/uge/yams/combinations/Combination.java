@@ -24,4 +24,33 @@ public interface Combination {
    * @return the score of the combination
    */
 	int score(Board board);
+
+  /**
+   * Creates a {@link Combination} instance based on the given label.
+   * <p>
+   * The label corresponds to a predefined type of combination:
+   * <ul>
+   *   <li>"C" - Chance</li>
+   *   <li>"T" - Three of a Kind</li>
+   *   <li>"F" - Four of a Kind</li>
+   *   <li>"S" - Small Straight</li>
+   *   <li>"L" - Large Straight</li>
+   *   <li>"H" - Full House</li>
+   * </ul>
+   * 
+   * @param label the label representing a specific combination
+   * @return a {@link Combination} corresponding to the given label
+   * @throws IllegalArgumentException if the label does not correspond to any known combination
+   */
+  public static Combination of(String label) {
+    return switch (label) {
+      case "C" -> new Chance();
+      case "T" -> new ThreeOfAKind();
+      case "F" -> new FourOfAKind();
+      case "S" -> new SmallStraight();
+      case "L" -> new LargeStraight();
+      case "H" -> new FullHouse();
+      default -> throw new IllegalArgumentException("Unexpected value: " + label);
+    };
+  }
 }

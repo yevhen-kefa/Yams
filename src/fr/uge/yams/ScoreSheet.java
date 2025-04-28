@@ -18,7 +18,6 @@ public class ScoreSheet {
 	}
 
 	public int scoreTotal() {
-
 		return scoreMap.values().stream().mapToInt(Integer::intValue).sum();
 	}
 

@@ -3,16 +3,11 @@ package fr.uge.yams;
 import java.util.Scanner;
 
 import fr.uge.yams.combinations.Combination;
-import fr.uge.yams.combinations.ThreeOfAKind;
-import fr.uge.yams.combinations.FullHouse;
 
 public class Yams {
-
 	public static String init(Scanner scanner) {
-
 		System.out.println("Welcome, player, please enter your name.");
 		return scanner.nextLine();
-
 	}
 
 	private static int askReroll(Scanner scanner) {
@@ -25,15 +20,6 @@ public class Yams {
 		System.out.println("Please choose a combination to score in your score sheet by entering its first letter.");
 		var choice = scanner.nextLine();
 		return choice;
-	}
-
-	private static Combination parseCombination(String combinationName) {
-
-		return switch (combinationName) {
-		case "T" -> new ThreeOfAKind();
-		case "F" -> new FullHouse();
-		default -> throw new IllegalArgumentException("Unexpected value: " + combinationName);
-		};
 	}
 
 	public static void main(String[] args) {
@@ -58,7 +44,7 @@ public class Yams {
 					break;
 				}
 			}
-			var combinationChoice = parseCombination(askCombination(scanner));
+			var combinationChoice = Combination.of(askCombination(scanner));
 			scoreSheet.updateScore(combinationChoice, board);
 			System.out.println(scoreSheet);
 		}
