@@ -88,13 +88,22 @@ Par exemple, lorsque vous démarrez le jeu et que vous entrez votre nom, le prog
 ```
 Exemple :
 Yams (main)
- ├── Board
- │    └── Dice x5
- ├── ScoreSheet
- └── Combination (interface)
-       ├── FullHouse
-       ├── ThreeOfAKind
-       └── …
+ ├── init
+ ├── askReroll
+ ├── askCombination
+ └── main(String[]) : void
+      ├── Board
+      │    └── Dice x5
+      ├── ScoreSheet player
+      └── Combination
+            ├── FullHouse
+            ├── ThreeOfAKind
+            ├── FourOfAKind
+            ├── SmallStraight
+            ├── LargeStraight
+            ├── FullHouse
+            ├── Yams
+            └── Chance
 ```
 
 ---
@@ -103,8 +112,19 @@ Yams (main)
 
 > Listez ici les classes ou méthodes que vous avez créées ou modifiées pour répondre au cahier des charges.
 
-- Création : _______________________________________________  
-- Modification : ____________________________________________  
+- Création : 
+- [ ] Créer des combinaisons de dés manquants
+- [ ] Créer un fichier de combinaison
+- [ ] Création d'une fonction de sélection d'un dé
+- [ ] Créer des fonctions pour lancer un dé 
+- [ ] Créer une fonction de score
+
+
+- Modification :
+- [ ] Modification de la sortie du dé
+- [ ] Modification de la sortie du plateau de jeu
+- [ ] Modifier le fichier de démarrage du jeu principal
+
 
 - Tests réalisés :
 - [ ] Rentrer des valeures null ou invalides lors du choix des des et des relances
