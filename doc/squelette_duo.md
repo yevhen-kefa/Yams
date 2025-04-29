@@ -8,7 +8,7 @@
 ## ✨ Tâche a. – Analyse du Code Produit pour l’Objectif 1
 
 ### 1. Démarche suivie  
-_Décrivez comment vous avez relu, testé ou réutilisé le code produit pour l'objectif 1 pour identifier les points à adapter ou à compléter._
+Après avoir terminé la première phase et commencé à mettre en œuvre plusieurs joueurs, nous avons rencontré des problèmes de structure et de qualité du code, ce qui nous a obligés à réécrire partiellement le code, complétant ainsi le code pour la deuxième partie. 
 
 
 ---
@@ -18,7 +18,10 @@ _Décrivez comment vous avez relu, testé ou réutilisé le code produit pour l'
 > Indiquez ici ce qui peut rester inchangé ou être réutilisé tel quel dans la version duo.
 
 - [ ] Classe `Dice`  
-- [ ] … (à compléter)
+- [ ] Toutes les combinaisons de dés
+- [ ] Classe `Board`  
+- [ ] Classe `ScoreSheet`  peuvent être réécrits et révisés
+
 
 ---
 
@@ -27,7 +30,10 @@ _Décrivez comment vous avez relu, testé ou réutilisé le code produit pour l'
 > Listez ici les fonctionnalités ou éléments manquants pour avoir un jeu jouable à deux, humain ou IA.
 
 - 🔲 Gestion de deux joueurs  
-- 🔲 … (à compléter)
+- 🔲 Possibilité de choisir entre les versions solo et duo
+- 🔲 Choisir entre un ordinateur et un joueurs humains  
+- 🔲 Possibilité de faire jouer un ordinateur
+- 🔲 Enregistrement de deux joueurs en tant qu'individus distincts
 
 ---
 
@@ -38,7 +44,11 @@ _Décrivez comment vous avez relu, testé ou réutilisé le code produit pour l'
 > Listez les fonctionnalités que vous comptez développer ou modifier.
 
 - [ ] Permettre à deux joueurs de jouer à tour de rôle  
-- [ ] … (à compléter)
+- [ ] Possibilité de choisir entre les versions solo et duo
+- [ ] Choisir entre un ordinateur et un joueurs humains  
+- [ ] Retrait de points pour les joueurs individuels
+
+
 
 ---
 
@@ -46,20 +56,34 @@ _Décrivez comment vous avez relu, testé ou réutilisé le code produit pour l'
 
 > Décrivez ici vos grandes orientations de conception.
 
-- … (à compléter)
-
+- Au lancement, le joueur choisit le mode de jeu, en fonction de son choix, il y a 2 modes, simple et avec un ordinateur ou avec une autre personne.
+Si le jeu est joué avec un ordinateur, le joueur peut, pendant son tour, choisir au hasard les dés qu'il veut relancer, le nombre de fois et la combinaison qu'il veut jouer.
 ---
 
 ### 3. Schéma simple de l’organisation du programme
 
 ```
-Exemple :
 Yams (main)
- ├── ...
- └── Combination (interface)
-       ├── FullHouse
-       ├── ThreeOfAKind
-       └── …
+ ├── chooseGameMode
+ ├── init
+ ├── friend
+ ├── askReroll
+ ├── askCombination
+ ├── makeRandomMove
+ └── main(String[])
+      ├── Board
+      │    └── Dice x5
+      ├── ScoreSheet player
+      ├── ScoreSheet friend 
+      └── Combination
+            ├── FullHouse
+            ├── ThreeOfAKind
+            ├── FourOfAKind
+            ├── SmallStraight
+            ├── LargeStraight
+            ├── FullHouse
+            ├── Yams
+            └── Chance
 ```
 
 ---
@@ -68,10 +92,18 @@ Yams (main)
 
 > Détaillez les ajouts/modifications apportés au code.
 
-- Ajouts : _________________________________________________  
-- Modifications : ___________________________________________  
-- Tests réalisés : __________________________________________  
+- Ajouts : 
+- [ ] Sélection du mode de jeu 
+- [ ] la possibilité de jouer à deux
+- [ ] la possibilité de choisir entre un joueur et un ordinateur a été ajoutée
+- [ ] la fonction de gestion de la file d'attente pour le joueur
 
+- Modifications : 
+- [ ] Système de notation pour chaque joueur
+- [ ] cycle de la file d'attente du joueur
+- [ ] Affichage du résultat dans la console prise en compte du mode de jeu
+- [ ] Interaction avec le joueur au début du jeu
+- [ ] Gestion des dés
 ---
 
 ## 📦 Tâche d. – Livraison
