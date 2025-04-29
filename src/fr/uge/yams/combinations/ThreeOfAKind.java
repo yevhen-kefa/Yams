@@ -33,6 +33,6 @@ public record ThreeOfAKind() implements Combination {
 
   @Override
   public String toString() {
-    return "Three of A Kind";
+    return "Three of a Kind";
   }
 }

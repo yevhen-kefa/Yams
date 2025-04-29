@@ -4,46 +4,24 @@ import java.util.Random;
 
 import fr.uge.yams.Board;
 
-/**
- * Represents a small straight combination in the game of Yams.
- * A small straight consists of four consecutive numbers (e.g., 1-2-3-4 or 2-3-4-5).
- * The score for a small straight is fixed at 30 points.
- */
+/* 
+Représente une petite quinte dans le jeu de Yams.
+Une petite suite est composée de quatre nombres consécutifs (par exemple, 1-2-3-4 ou 2-3-4-5).
+Le score d'une petite suite est fixé à 30 points.
+*/
 public interface Combination {
 
-  /**
-   * Check if the combination is valid for the given board.
-   *
-   * @param board the board to check
-   * @return true if the combination is valid, false otherwise
+  /*
+  Vérifier si la combinaison est valable pour la carte donnée.
    */
   boolean valid(Board board);
 
-  /**
-   * Returns the score of the combination.
-   *
-   * @param board the board to check
-   * @return the score of the combination
+  /*
+   Renvoie le score de la combinaison.
    */
 	int score(Board board);
 
-  /**
-   * Creates a {@link Combination} instance based on the given label.
-   * <p>
-   * The label corresponds to a predefined type of combination:
-   * <ul>
-   *   <li>"C" - Chance</li>
-   *   <li>"T" - Three of a Kind</li>
-   *   <li>"F" - Four of a Kind</li>
-   *   <li>"S" - Small Straight</li>
-   *   <li>"L" - Large Straight</li>
-   *   <li>"H" - Full House</li>
-   * </ul>
-   * 
-   * @param label the label representing a specific combination
-   * @return a {@link Combination} corresponding to the given label
-   * @throws IllegalArgumentException if the label does not correspond to any known combination
-   */
+  
   public static Combination of(String label) {
     return switch (label) {
       case "C" -> new Chance();
@@ -56,12 +34,10 @@ public interface Combination {
     };
   }
 
-  /**
-   * Creates a random {@link Combination} instance.
-   * <p>
-   * The method randomly selects one of the predefined combinations.
-   * 
-   * @return a random {@link Combination}
+  /*
+  Crée une instance de combinaison aléatoire.
+  La méthode sélectionne au hasard l'une des combinaisons prédéfinies.
+  Retourne une combinaison aléatoire
    */
   public static Combination of() {
     var pick = new Random().nextInt(6);

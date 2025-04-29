@@ -20,6 +20,6 @@ public record Chance() implements Combination {
 
   @Override
   public String toString() {
-    return "Three of A Kind";
+    return "Chance";
   }
 }
