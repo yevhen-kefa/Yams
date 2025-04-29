@@ -51,27 +51,45 @@ public class Yams {
     player.updateScore(pattern, board);
   }
 
+  private static boolean chooseGameMode(Scanner scanner) {
+    System.out.println("Do you want to play solo or with a friend? (Type 's' or 'f')");
+    var choice = scanner.nextLine().trim().toLowerCase();
+    if (choice.equals("s")) {
+      return true;
+    } else if (choice.equals("f")) {
+      return false;
+    } else {
+      System.out.println("Invalid choice. Please type 's' or 'f'.");
+      return chooseGameMode(scanner);
+    }
+  }
+
   public static void main(String[] args) {
     var scanner = new Scanner(System.in);
+    boolean soloMode = chooseGameMode(scanner);
 
     var player = init(scanner);
     System.out.println("Hello " + player.name() + ", and good luck !\n");
 
-    var friend = friend(scanner);
-    System.out.println("Hello " + friend.name() + ", and good luck !\n");
+    ScoreSheet friend = null;
+    if (!soloMode) {
+      friend = friend(scanner);
+      System.out.println("Hello " + friend.name() + ", and good luck !\n");
+    }
 
     var turnPlayer = true;
-    // Début du tour du joueur
-    for (var roundCounter = 0; roundCounter < 26; roundCounter++) {
 
-      if (friend.isBot() && !turnPlayer) {
+    for (var roundCounter = 0; roundCounter < (soloMode ? 6 : 12); roundCounter++) {
+      ScoreSheet currentPlayer = soloMode ? player : (turnPlayer ? player : friend);
+
+      if (!soloMode && friend.isBot() && !turnPlayer) {
         makeRandomMove(friend, new Board());
         System.out.println(friend);
         turnPlayer = !turnPlayer;
         continue;
       }
 
-      System.out.println(turnPlayer ? player.name() : friend.name() + ", Welcome in round " + (roundCounter + 1) / 2);
+      System.out.println(currentPlayer.name() + ", Welcome in round " + (soloMode ? roundCounter + 1 : (roundCounter + 1) / 2));
       var board = new Board();
       System.out.println(board);
 
@@ -82,20 +100,17 @@ public class Yams {
 
         board.reroll(choice);
         System.out.println(board);
-
       }
+
       var combinationChoice = askCombination(scanner);
-      if (turnPlayer) {
-        player.updateScore(combinationChoice, board);
-        System.out.println(player);
-      } else {
-        friend.updateScore(combinationChoice, board);
-        System.out.println(friend);
-      }
+      currentPlayer.updateScore(combinationChoice, board);
+      System.out.println(currentPlayer);
 
-      turnPlayer = !turnPlayer;
+      if (!soloMode) {
+        turnPlayer = !turnPlayer;
+      }
     }
+
     System.out.println("Game Over!");
   }
-
 }
