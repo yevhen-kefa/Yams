@@ -3,6 +3,7 @@ package fr.uge.yams.combinations;
 import java.util.Random;
 
 import fr.uge.yams.Board;
+import java.util.List;
 
 /* 
 Représente une petite quinte dans le jeu de Yams.
@@ -32,6 +33,17 @@ public interface Combination {
       case "H" -> new FullHouse();
       default -> throw new IllegalArgumentException("Unexpected value: " + label);
     };
+  }
+
+  public static List<Combination> values() {
+      return List.of(
+        new Chance(),
+        new ThreeOfAKind(),
+        new FourOfAKind(),
+        new SmallStraight(),
+        new LargeStraight(),
+        new FullHouse()
+      );
   }
 
   /*
