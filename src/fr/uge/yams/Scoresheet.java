@@ -5,20 +5,16 @@ import java.util.Objects;
 
 import fr.uge.yams.combinations.Combination;
 
-public class ScoreSheet {
+public class Scoresheet {
   private final String playerName;
   private final HashMap<Combination, Integer> scoreMap = new HashMap<>();
 
-  public ScoreSheet(String playerName) {
+  public Scoresheet(String playerName) {
     this.playerName = Objects.requireNonNull(playerName);
   }
 
   public String name() {
-    return isBot() ? "Bot" : playerName;
-  }
-
-  public boolean isBot() {
-    return playerName.equals("");
+    return playerName;
   }
 
   public void updateScore(Combination pattern, Board board) {
