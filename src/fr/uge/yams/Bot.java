@@ -14,7 +14,7 @@ public class Bot implements Player{
     private Set<Combination> usingCombination = new HashSet<>();
     private int rerollAttempts = 0;
 
-    @Override
+
     public void askName() {
         scoresheet = new Scoresheet("Bot");
     }
@@ -32,6 +32,7 @@ public class Bot implements Player{
 
     @Override
     public ArrayList<Integer> askReroll(Scanner scanner) {
+        rerollAttempts = 0;
         if (rerollAttempts >= 3) {
             System.out.println("Bot has reached maximum rerolls.");
             var stop = new ArrayList<Integer>();
@@ -44,7 +45,7 @@ public class Bot implements Player{
         // Creates a list for dice the bot wants to reroll
         var rerolls = new ArrayList<Integer>();
         // Randomly decides how many dice to reroll (0 to 2)
-        var rerollCount = new Random().nextInt(3);
+        var rerollCount = new Random().nextInt(5);
         // Randomly selects unique dice indices to reroll (1 to 5)
         Set<Integer> used = new HashSet<>();
         while (rerolls.size() < rerollCount) {
@@ -59,9 +60,6 @@ public class Bot implements Player{
         System.out.println("Bot will rerol dice: " + rerolls);
         rerollAttempts++;
         return rerolls;
-    }
-    public void resetRerolls() {
-        rerollAttempts = 0;
     }
 
     @Override

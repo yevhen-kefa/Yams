@@ -31,6 +31,7 @@ public interface Combination {
       case "S" -> new SmallStraight();
       case "L" -> new LargeStraight();
       case "H" -> new FullHouse();
+      case "Y" -> new Yahtzee();
       default -> throw new IllegalArgumentException("Unexpected value: " + label);
     };
   }
@@ -42,7 +43,8 @@ public interface Combination {
         new FourOfAKind(),
         new SmallStraight(),
         new LargeStraight(),
-        new FullHouse()
+        new FullHouse(),
+        new Yahtzee()
       );
   }
 
@@ -52,7 +54,7 @@ public interface Combination {
   Retourne une combinaison aléatoire
    */
   public static Combination of() {
-    var pick = new Random().nextInt(6);
+    var pick = new Random().nextInt(7);
     return switch (pick) {
         case 0 -> new Chance();
         case 1 -> new ThreeOfAKind();
@@ -60,6 +62,7 @@ public interface Combination {
         case 3 -> new SmallStraight();
         case 4 -> new LargeStraight();
         case 5 -> new FullHouse();
+        case 6 -> new Yahtzee();
         default -> throw new AssertionError("Unexpected random value: " + pick);
     };
   }

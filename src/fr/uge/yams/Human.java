@@ -12,8 +12,15 @@ public class Human implements Player{
     @Override
     public void askName() {
         Scanner scanner = new Scanner(System.in);
-        String name = scanner.nextLine().trim();
-        scoresheet = new Scoresheet(name.isEmpty() ? "Guest" : name);
+        String name;
+        do {
+            System.out.println("Please enter the player's name:");
+            name = scanner.nextLine().trim();
+            if (name.isEmpty()) {
+                System.out.println("Name cannot be empty. Please try again.");
+            }
+        } while (name.isEmpty());
+        scoresheet = new Scoresheet(name);
     }
 
     @Override
@@ -31,21 +38,24 @@ public class Human implements Player{
 
         ArrayList<Integer> choice = new ArrayList<Integer>();
 
-        while (choice.size() < 5 || choice.getLast() != 0) {
+        do {
 
             //Demander a l'humain pour choisir les dés
             System.out.println("Please choose which dice to reroll by entering their index (1 to 5) or 0 to end the reroll.");
+            System.out.println(choice);
+            Integer n = 0;
+            System.out.print(n == 0);
 
             try {
                 int number = scanner.nextInt();
                 if (number < 0 || number > 5) {
                     System.out.println("Error: Number must be between 0 and 5");
-                    scanner.nextLine();
+                    scanner.nextInt();
                     continue;
                 }
                 if (choice.contains(number)) {
                     System.out.println("Error: You've already selected dice " + number);
-                    scanner.nextLine();
+                    scanner.nextInt();
                     continue;
                 }
                 choice.add(number);
@@ -54,13 +64,15 @@ public class Human implements Player{
                 System.out.println("Error: Please enter a valid integer");
                 scanner.nextLine();
             }
-        }
+        } while (choice.size() < 5 && choice.getLast() != 0);
         return choice;
     }
 
     @Override
     public Combination askCombination(Scanner scanner) {
         //Ask player for a combination to score
+        scanner.nextLine(); // Ajoutez cette ligne
+
         System.out.println("Please choose a combination to score in your score sheet by entering its first letter.");
         System.out.println("Valid combinations are: ");
         for (Combination combination : Combination.values()) {

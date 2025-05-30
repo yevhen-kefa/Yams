@@ -41,12 +41,10 @@ public interface Player {
         //creer le scanner d'entrées du joueur Humain
         var scanner = new Scanner(System.in);
 
-        //afficher le plateau
-        System.out.println(board);
-
         //système de reroll des joueurs
         for (var i = 0; i < 3; i++) {
-
+            //afficher le plateau avant le reroll
+            System.out.println(board);
             var choice = askReroll(scanner);
 
             if (choice.getFirst() == 0) {
@@ -60,11 +58,6 @@ public interface Player {
                 }
             }
 
-        }
-
-        //système de choix de la combinaison
-        if (!isBot()) {
-            System.out.println("Enter combination to score in your score sheet");
         }
 
         //demande la combinaison à jouer
