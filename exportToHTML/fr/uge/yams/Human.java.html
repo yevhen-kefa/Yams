@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>Human.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #6a8759;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Human.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">fr.uge.yams</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">fr.uge.yams.combinations.Combination</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.util.*</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">Human </span><span class="s0">implements </span><span class="s1">Player{</span>
+
+    <span class="s2">// scoresheet de l'humain</span>
+    <span class="s0">private </span><span class="s1">Scoresheet scoresheet</span><span class="s0">;</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">askName() {</span>
+        <span class="s1">Scanner scanner = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+        <span class="s1">String name</span><span class="s0">;</span>
+        <span class="s0">do </span><span class="s1">{</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Please enter the player's name:&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">name = scanner.nextLine().trim()</span><span class="s0">;</span>
+            <span class="s0">if </span><span class="s1">(name.isEmpty()) {</span>
+                <span class="s1">System.out.println(</span><span class="s3">&quot;Name cannot be empty. Please try again.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">} </span><span class="s0">while </span><span class="s1">(name.isEmpty())</span><span class="s0">;</span>
+        <span class="s1">scoresheet = </span><span class="s0">new </span><span class="s1">Scoresheet(name)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public </span><span class="s1">String getName() {</span>
+        <span class="s0">return </span><span class="s1">scoresheet.name()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public </span><span class="s1">Scoresheet getScoresheet() {</span>
+        <span class="s0">return </span><span class="s1">scoresheet</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public </span><span class="s1">ArrayList&lt;Integer&gt; askReroll(Scanner scanner) {</span>
+
+        <span class="s1">ArrayList&lt;Integer&gt; choice = </span><span class="s0">new </span><span class="s1">ArrayList&lt;Integer&gt;()</span><span class="s0">;</span>
+
+        <span class="s0">do </span><span class="s1">{</span>
+
+            <span class="s2">//Demander a l'humain pour choisir les dés</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Please choose which dice to reroll by entering their index (1 to 5) or 0 to end the reroll.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">System.out.println(choice)</span><span class="s0">;</span>
+            <span class="s1">Integer n = </span><span class="s4">0</span><span class="s0">;</span>
+            <span class="s1">System.out.print(n == </span><span class="s4">0</span><span class="s1">)</span><span class="s0">;</span>
+
+            <span class="s0">try </span><span class="s1">{</span>
+                <span class="s0">int </span><span class="s1">number = scanner.nextInt()</span><span class="s0">;</span>
+                <span class="s0">if </span><span class="s1">(number &lt; </span><span class="s4">0 </span><span class="s1">|| number &gt; </span><span class="s4">5</span><span class="s1">) {</span>
+                    <span class="s1">System.out.println(</span><span class="s3">&quot;Error: Number must be between 0 and 5&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">scanner.nextInt()</span><span class="s0">;</span>
+                    <span class="s0">continue;</span>
+                <span class="s1">}</span>
+                <span class="s0">if </span><span class="s1">(choice.contains(number)) {</span>
+                    <span class="s1">System.out.println(</span><span class="s3">&quot;Error: You've already selected dice &quot; </span><span class="s1">+ number)</span><span class="s0">;</span>
+                    <span class="s1">scanner.nextInt()</span><span class="s0">;</span>
+                    <span class="s0">continue;</span>
+                <span class="s1">}</span>
+                <span class="s1">choice.add(number)</span><span class="s0">;</span>
+
+            <span class="s1">} </span><span class="s0">catch </span><span class="s1">(InputMismatchException e) {</span>
+                <span class="s1">System.out.println(</span><span class="s3">&quot;Error: Please enter a valid integer&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">scanner.nextLine()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">} </span><span class="s0">while </span><span class="s1">(choice.size() &lt; </span><span class="s4">5 </span><span class="s1">&amp;&amp; choice.getLast() != </span><span class="s4">0</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">return </span><span class="s1">choice</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public </span><span class="s1">Combination askCombination(Scanner scanner) {</span>
+        <span class="s2">//Ask player for a combination to score</span>
+        <span class="s1">scanner.nextLine()</span><span class="s0">; </span><span class="s2">// Ajoutez cette ligne</span>
+
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please choose a combination to score in your score sheet by entering its first letter.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Valid combinations are: &quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">for </span><span class="s1">(Combination combination : Combination.values()) {</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;- &quot; </span><span class="s1">+ combination)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">try </span><span class="s1">{</span>
+            <span class="s1">var input = scanner.nextLine().trim()</span><span class="s0">;</span>
+            <span class="s1">var use = Combination.of(input.toUpperCase())</span><span class="s0">;</span>
+            <span class="s2">//Choose combination from list of valid combinations</span>
+            <span class="s0">return </span><span class="s1">use</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">catch </span><span class="s1">(IllegalArgumentException e) {</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Invalid combination. Please enter a valid combination.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s0">return </span><span class="s1">askCombination(scanner)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+
+<span class="s1">}</span></pre>
+</body>
+</html>
