@@ -1,0 +1,33 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+@font-face {
+    font-family: "Pixelify Sans";
+    src: url("font/PixelifySans.ttf");
+}
+
+
+.root {
+    -fx-background-image: url("bg.png");
+    -fx-background-size: cover;
+    -fx-font-family: "Pixelify Sans";
+
+}
+
+.button, .label, .text {
+    -fx-font-family: "Pixelify Sans";
+}
+
+.button {
+    -fx-background-color: red;
+    -fx-text-fill: white;
+    -fx-font-family: "Pixelify Sans";
+    -fx-font-size: 70px;
+}
+
+.button:hover {
+    -fx-background-color: darkred; 
+    -fx-font-size: 70px; 
+    -fx-scale-x: 1;      
+    -fx-scale-y: 1;
+}
+
