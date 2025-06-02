@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="973131f1-a1a5-4de9-96a6-dc8254dbd875" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
@@ -83,6 +84,13 @@
       <change afterPath="$PROJECT_DIR$/src/main/resources/DiceList.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vue/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/vue/Main.java" afterDir="false" />
     </list>
+=======
+    <list default="true" id="7454fca6-b9a9-4feb-8bd8-8144c192eb61" name="Changes" comment="added winning and no bugs anymore">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <list id="668bc85b-6bf3-4982-a48e-3fb84b36a6d4" name="Changes by kefae" comment="" />
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -131,6 +139,7 @@
     <option name="sortByType" value="true" />
     <option name="sortKey" value="BY_TYPE" />
   </component>
+<<<<<<< Updated upstream
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
@@ -170,6 +179,42 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.AIAssistantPromptsLibrary&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.Game.executor": "Run",
+    "Application.GameLoop.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.Yams.executor": "Run",
+    "Application.main.java.yams.Main.executor": "Run",
+    "Application.yams.GameLoop.executor": "Run",
+    "Application.yams.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Maven.yams [compile].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "true",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "test",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/Users/nachn/OneDrive/Documents/GitHub/Yams/Yams/src/main/java",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/nachn/OneDrive/Documents/GitHub/Yams/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "ml.llm.AIAssistantPromptsLibrary",
+    "vue.rearranger.settings.migration": "true"
+>>>>>>> Stashed changes
   }
 }</component>
   <component name="RecentsManager">
@@ -289,6 +334,7 @@
       <workItem from="1748718123943" duration="10000" />
       <workItem from="1748718383073" duration="9000" />
       <workItem from="1748718430991" duration="28418000" />
+      <workItem from="1748860380679" duration="327000" />
     </task>
     <task id="LOCAL-00001" summary="mjhgfds">
       <option name="closed" value="true" />
