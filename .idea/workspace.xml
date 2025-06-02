@@ -5,42 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/FriendController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/MenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/ModeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/SoloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yams/model/NavAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/controleur/PleaseProvideControllerClassName.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/Model.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/vue/DiceList.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/vue/font/PixelifySans.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/font/PixelifySans.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/vue/img/Farky.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/Farky.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/vue/img/bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/bg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/vue/img/bg2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/bg2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/vue/img/hand.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/hand.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/DiceList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DiceList.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/friend.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/friend.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/gameDesk.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/gameBoard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DiceList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DiceList.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controleur/PleaseProvideControllerClassName.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/friend.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/friend.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gameDesk.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/menu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mode.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mode.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/solo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/solo.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/yams/model/Model.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yams/controleur/FriendController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/FriendController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yams/controleur/SoloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/SoloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/gameBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/gameBoard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gameBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gameBoard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/yams/controleur/FriendController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/controleur/FriendController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/yams/controleur/SoloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/controleur/SoloController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
-    <list id="5791d63c-267e-4189-a012-88054f0cdb47" name="Changes by kefae" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/vue/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/vue/application.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/DiceList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DiceList.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/menu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mode.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mode.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/solo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/solo.fxml" afterDir="false" />
-    </list>
+    <list id="5791d63c-267e-4189-a012-88054f0cdb47" name="Changes by kefae" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,15 +28,6 @@
         <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/resources/DiceList.fxml">
-      <ranges>
-        <range start1="18" end1="19" start2="18" end2="19" changelist="5791d63c-267e-4189-a012-88054f0cdb47" />
-        <range start1="21" end1="113" start2="21" end2="113" changelist="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" />
-        <range start1="114" end1="114" start2="114" end2="115" changelist="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -74,7 +41,10 @@
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
   <component name="RecentsManager">
