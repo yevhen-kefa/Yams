@@ -2,12 +2,12 @@
 
 @font-face {
     font-family: "Pixelify Sans";
-    src: url("font/PixelifySans.ttf");
+    src: url("../../../resources/font/PixelifySans.ttf");
 }
 
 
 .root {
-    -fx-background-image: url("bg.png");
+    -fx-background-image: url(" bg.png");
     -fx-background-size: cover;
     -fx-font-family: "Pixelify Sans";
 

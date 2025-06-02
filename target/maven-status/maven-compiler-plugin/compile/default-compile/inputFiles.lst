@@ -1,5 +1,9 @@
+C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\org\example\Main.java
+C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\controleur\FriendController.java
 C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\controleur\GameController.java
-C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\controleur\PleaseProvideControllerClassName.java
+C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\controleur\MenuController.java
+C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\controleur\ModeController.java
+C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\controleur\SoloController.java
 C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\model\combinations\Chance.java
 C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\model\combinations\CombinationModel.java
 C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\model\combinations\FourOfAKind.java
@@ -10,7 +14,7 @@ C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\model\combinati
 C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\model\combinations\Yahtzee.java
 C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\model\game\Board.java
 C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\model\game\Dice.java
-C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\model\Model.java
+C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\model\NavAgent.java
 C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\model\players\Bot.java
 C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\model\players\Human.java
 C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\model\players\PlayerModel.java
