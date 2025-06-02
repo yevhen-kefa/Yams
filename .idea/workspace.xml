@@ -4,8 +4,85 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7454fca6-b9a9-4feb-8bd8-8144c192eb61" name="Changes" comment="added winning and no bugs anymore" />
-    <list id="668bc85b-6bf3-4982-a48e-3fb84b36a6d4" name="Changes by kefae" comment="" />
+    <list default="true" id="973131f1-a1a5-4de9-96a6-dc8254dbd875" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.apt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.m2e.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controleur/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controleur/PleaseProvideControllerClassName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/PleaseProvideControllerClassName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/combinations/Chance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/combinations/Chance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/combinations/CombinationModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/combinations/CombinationModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/combinations/FourOfAKind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/combinations/FourOfAKind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/combinations/FullHouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/combinations/FullHouse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/combinations/LargeStraight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/combinations/LargeStraight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/combinations/SmallStraight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/combinations/SmallStraight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/combinations/ThreeOfAKind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/combinations/ThreeOfAKind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/combinations/Yahtzee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/combinations/Yahtzee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/game/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/game/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/game/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/game/Dice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/players/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/players/Bot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/players/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/players/Human.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/players/PlayerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/players/PlayerModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/players/Scoresheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/players/Scoresheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vue/ConsoleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/vue/ConsoleView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vue/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/vue/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vue/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/vue/application.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vue/font.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/vue/font.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vue/font/PixelifySans.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/vue/font/PixelifySans.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vue/friend.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/friend.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vue/gameDesk.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/gameDesk.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vue/img/Farky.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/vue/img/Farky.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vue/img/bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/vue/img/bg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vue/img/bg2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/vue/img/bg2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vue/img/hand.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/vue/img/hand.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vue/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vue/mode.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mode.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vue/solo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/solo.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controleur/GameController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controleur/PleaseProvideControllerClassName.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controleur/PleaseProvideControllerClassName.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Model.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/combinations/Chance.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/combinations/CombinationModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/combinations/FourOfAKind.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/combinations/FullHouse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/combinations/LargeStraight.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/combinations/SmallStraight.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/combinations/ThreeOfAKind.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/combinations/Yahtzee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/game/Board.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/game/Dice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/players/Bot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/players/Human.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/players/PlayerModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/players/Scoresheet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vue/ConsoleView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vue/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vue/application.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vue/font.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vue/font/PixelifySans.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vue/friend.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vue/gameDesk.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vue/img/Farky.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vue/img/bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vue/img/bg2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vue/img/hand.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vue/menu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vue/mode.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/vue/solo.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/yams/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/yams/controller/GameController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/yams/view/ConsoleView.class" beforeDir="false" />
+    </list>
+    <list id="4d0ee778-9d9b-4a78-aa23-ff187e0a507f" name="Changes by kefae" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/DiceList.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vue/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/vue/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +108,14 @@
     &quot;accountId&quot;: &quot;de3e4e86-bf29-4bf7-b35f-fb624d3f5304&quot;
   }
 }</component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/yams/vue/Main.java">
+      <ranges>
+        <range start1="0" end1="3" start2="0" end2="1" changelist="973131f1-a1a5-4de9-96a6-dc8254dbd875" />
+        <range start1="13" end1="14" start2="11" end2="12" changelist="4d0ee778-9d9b-4a78-aa23-ff187e0a507f" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -46,52 +131,59 @@
     <option name="sortByType" value="true" />
     <option name="sortKey" value="BY_TYPE" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Application.Game.executor": "Run",
-    "Application.GameLoop.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.Yams.executor": "Run",
-    "Application.main.java.yams.Main.executor": "Run",
-    "Application.yams.GameLoop.executor": "Run",
-    "Application.yams.Main.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Maven.yams [compile].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "true",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/nachn/OneDrive/Documents/GitHub/Yams/Yams/src/main/java",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/nachn/OneDrive/Documents/GitHub/Yams/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "ml.llm.AIAssistantPromptsLibrary",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Game.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GameLoop.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Yams.executor&quot;: &quot;Run&quot;,
+    &quot;Application.main.java.yams.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.yams.GameLoop.executor&quot;: &quot;Run&quot;,
+    &quot;Application.yams.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.yams.vue.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Maven.yams [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.yams [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.yams [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.yams [org.codehaus.mojo:exec-maven-plugin:3.1.1:java].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.yams [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;test&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;ignore_missing_gitignore&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nachn/OneDrive/Documents/GitHub/Yams/src/main/java/yams/vue&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/nachn/OneDrive/Documents/GitHub/Yams/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.AIAssistantPromptsLibrary&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\vue" />
       <recent name="C:\Users\nachn\OneDrive\Documents\GitHub\Yams\Yams\src\main\java" />
       <recent name="C:\Users\nachn\OneDrive\Documents\GitHub\Yams\standard" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\resources" />
+      <recent name="C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams" />
+      <recent name="C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\vue" />
       <recent name="C:\Users\nachn\OneDrive\Documents\GitHub\Yams" />
       <recent name="C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src" />
-      <recent name="C:\Users\nachn\OneDrive\Documents\GitHub\Yams\Yams\src" />
-      <recent name="C:\Users\nachn\OneDrive\Documents\GitHub\Yams\Yams" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -99,7 +191,7 @@
       <command value="mvn compile" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.yams.Main">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-24" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -262,11 +354,6 @@
           <properties class="java.lang.StackOverflowError" package="java.lang" />
           <option name="timeStamp" value="2" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
