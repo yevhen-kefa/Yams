@@ -15,10 +15,8 @@ public class SoloController {
 
     @FXML
     private Button btnReturn;
-    @FXML
-    private Button btnPlay;
-    @FXML
-    private TextField inputBots;
+    @FXML private TextField inputBots;
+    @FXML private Button btnPlay;
 
     @FXML
     void initialize() {

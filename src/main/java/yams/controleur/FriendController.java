@@ -40,7 +40,6 @@ public class FriendController {
             return null;
         };
 
-        inputBots.setTextFormatter(new TextFormatter<>(filter));
         inputFriends.setTextFormatter(new TextFormatter<>(filter));
         btnPlay.disableProperty().bind(inputBots.textProperty().isEmpty());
     }

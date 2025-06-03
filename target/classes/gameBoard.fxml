@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yams.controleur.BoardController">
     <children>
         <ImageView fitHeight="1080" fitWidth="1920" preserveRatio="false">
             <image>
@@ -46,7 +46,7 @@
          <right>
             <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="809.0" prefWidth="220.0" spacing="20.0" style="-fx-background-color: #d4cfcf;" BorderPane.alignment="CENTER">
                <children>
-                  <Label text="Player1">
+                  <Label fx:id="nomPlayer" text="Player1">
                      <font>
                         <Font size="25.0" />
                      </font>
@@ -92,7 +92,7 @@
                         <Font size="25.0" />
                      </font>
                   </Label>
-                  <Label text="Player 1">
+                  <Label fx:id="scrPlayer" text="Player 1">
                      <font>
                         <Font size="25.0" />
                      </font>

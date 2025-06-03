@@ -12,6 +12,7 @@ yams\model\combinations\Yahtzee.class
 yams\model\combinations\Chance.class
 yams\model\players\PlayerModel.class
 yams\model\players\Scoresheet.class
+yams\controleur\BoardController.class
 yams\model\players\Bot.class
 yams\controleur\FriendController.class
 yams\controleur\SoloController.class

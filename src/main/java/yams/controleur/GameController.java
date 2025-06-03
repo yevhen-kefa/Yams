@@ -18,6 +18,9 @@ public class GameController {
     public GameController(ConsoleView view) {
         this.view = view;
     }
+    public GameController() {
+        this.view = new ConsoleView(); // або null, або якийсь дефолт
+    }
 
     private boolean handleReroll(PlayerModel player, Board board) {
         ArrayList<Integer> choice = new ArrayList<>();
