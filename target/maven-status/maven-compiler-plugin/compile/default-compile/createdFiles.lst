@@ -3,7 +3,6 @@ yams\controleur\GameController.class
 yams\model\game\Board.class
 yams\model\combinations\LargeStraight.class
 yams\model\combinations\CombinationModel.class
-org\example\Main.class
 yams\model\combinations\ThreeOfAKind.class
 yams\vue\DiceView.class
 yams\model\combinations\FourOfAKind.class
