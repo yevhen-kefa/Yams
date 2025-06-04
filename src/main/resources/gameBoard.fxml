@@ -80,7 +80,7 @@
                         <Image url="@img/green.png" />
                      </image>
                   </ImageView>
-                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="863.0" />
+                  <AnchorPane fx:id="anchorDice" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="863.0" />
                </children>
             </StackPane>
          </center>
@@ -118,6 +118,9 @@
                <font>
                   <Font size="43.0" />
                </font>
+               <BorderPane.margin>
+                  <Insets top="10.0" />
+               </BorderPane.margin>
             </Button>
          </top>
       </BorderPane>

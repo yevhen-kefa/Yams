@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Board {
-  private final List<Dice> dices = new ArrayList<Dice>();
+  private final List<Dice> dices = new ArrayList<>();
 
   public Board() {
-    for (var i = 1; i <= 5; i++) {
+    for (int i = 0; i < 5; i++) {
       dices.add(new Dice());
     }
   }
@@ -16,21 +16,24 @@ public class Board {
     return List.copyOf(dices);
   }
 
+  public Dice getDice(int index) {
+    return dices.get(index);
+  }
+
+  public Dice reroll(int index) {
+    Dice newDice = dices.get(index).reroll();
+    dices.set(index, newDice);
+    return newDice;
+  }
+
   @Override
   public String toString() {
-    var builder = new StringBuilder();
-    for (var i = 1; i <= 5; i++) {
-      builder.append(dices.get(i - 1).toString());
+    StringBuilder builder = new StringBuilder();
+    for (Dice dice : dices) {
+      builder.append(dice.toString());
     }
     builder.append("\n").append("-----------------\n");
-
     return builder.toString();
   }
-
-  public void reroll(int pos) {
-    if (pos < 1 || pos > 5) {
-      throw new IllegalArgumentException();
-    }
-    dices.set(pos - 1, new Dice());
-  }
 }
+
