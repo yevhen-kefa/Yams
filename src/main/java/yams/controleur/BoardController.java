@@ -51,10 +51,9 @@ public class BoardController {
 
         // Exécuter le code après que la scène soit complètement chargée
         javafx.application.Platform.runLater(() -> {
-            double maxWidth = anchorDice.getWidth() - 80;   // Largeur maximale
+            double maxWidth = anchorDice.getWidth() - 800;   // Largeur maximale
             double maxHeight = anchorDice.getHeight() - 80; // Hauteur maximale
-            double diceSize = 80; // Taille supposée du dé
-            double diceColision = 150;
+            double diceSize = 100;
 
             for (int i = 0; i < 5; i++) {
                 Dice dice = board.getDice(i);
@@ -77,8 +76,8 @@ public class BoardController {
                         double x2 = randomX;
                         double y2 = randomY;
 
-                        if (x1 < x2 + diceColision && x1 + diceColision > x2 &&
-                                y1 < y2 + diceColision && y1 + diceColision > y2) {
+                        if (x1 < x2 + diceSize && x1 + diceSize > x2 &&
+                                y1 < y2 + diceSize && y1 + diceSize > y2) {
                             overlap = true;
                             break;
                         }
@@ -105,7 +104,7 @@ public class BoardController {
     void btnReroll(ActionEvent event) {
         double maxWidth = anchorDice.getWidth() - 80;
         double maxHeight = anchorDice.getHeight() - 80;
-        double diceSize = 80;
+        double diceSize = 100;
 
         for (int i = 0; i < 5; i++) {
             // Relancer le dé côté modèle
