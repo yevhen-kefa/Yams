@@ -5,22 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/controleur/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/BoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/controleur/FriendController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/FriendController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/controleur/SoloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/SoloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/players/Scoresheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/players/Scoresheet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/gameBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/gameBoard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gameBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gameBoard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/yams/controleur/BoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/controleur/BoardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/yams/controleur/FriendController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/controleur/FriendController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/yams/controleur/SoloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/controleur/SoloController.class" afterDir="false" />
     </list>
     <list id="5791d63c-267e-4189-a012-88054f0cdb47" name="Changes by kefae" comment="" />
     <list id="e83d990b-ed2a-47f2-81ef-c4e2ca309973" name="Changes by nachn" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/yams/controleur/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/BoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/controleur/FriendController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/FriendController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/controleur/SoloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/SoloController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,50 +25,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/yams/controleur/FriendController.java">
-      <ranges>
-        <range start1="8" end1="11" start2="8" end2="9" changelist="e83d990b-ed2a-47f2-81ef-c4e2ca309973" />
-        <range start1="21" end1="21" start2="19" end2="20" changelist="e83d990b-ed2a-47f2-81ef-c4e2ca309973" />
-        <range start1="58" end1="59" start2="57" end2="58" changelist="e83d990b-ed2a-47f2-81ef-c4e2ca309973" />
-        <range start1="64" end1="65" start2="63" end2="64" changelist="e83d990b-ed2a-47f2-81ef-c4e2ca309973" />
-        <range start1="75" end1="76" start2="74" end2="75" changelist="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" />
-        <range start1="78" end1="79" start2="77" end2="78" changelist="e83d990b-ed2a-47f2-81ef-c4e2ca309973" />
-        <range start1="80" end1="80" start2="79" end2="85" changelist="e83d990b-ed2a-47f2-81ef-c4e2ca309973" />
-        <range start1="81" end1="82" start2="86" end2="87" changelist="e83d990b-ed2a-47f2-81ef-c4e2ca309973" />
-        <range start1="98" end1="99" start2="103" end2="104" changelist="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" />
-        <range start1="107" end1="110" start2="112" end2="120" changelist="e83d990b-ed2a-47f2-81ef-c4e2ca309973" />
-        <range start1="112" end1="115" start2="122" end2="128" changelist="e83d990b-ed2a-47f2-81ef-c4e2ca309973" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/yams/controleur/BoardController.java">
-      <ranges>
-        <range start1="2" end1="3" start2="2" end2="2" changelist="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" />
-        <range start1="12" end1="12" start2="11" end2="12" changelist="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" />
-        <range start1="23" end1="23" start2="23" end2="25" changelist="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" />
-        <range start1="56" end1="57" start2="58" end2="59" changelist="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" />
-        <range start1="58" end1="60" start2="60" end2="64" changelist="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" />
-        <range start1="61" end1="61" start2="65" end2="66" changelist="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" />
-        <range start1="66" end1="67" start2="71" end2="72" changelist="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" />
-        <range start1="84" end1="84" start2="89" end2="138" changelist="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" />
-        <range start1="90" end1="90" start2="144" end2="147" changelist="e83d990b-ed2a-47f2-81ef-c4e2ca309973" />
-        <range start1="95" end1="97" start2="152" end2="153" changelist="e83d990b-ed2a-47f2-81ef-c4e2ca309973" />
-        <range start1="128" end1="129" start2="184" end2="185" changelist="e83d990b-ed2a-47f2-81ef-c4e2ca309973" />
-        <range start1="141" end1="142" start2="197" end2="199" changelist="e83d990b-ed2a-47f2-81ef-c4e2ca309973" />
-        <range start1="168" end1="168" start2="225" end2="243" changelist="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/yams/controleur/SoloController.java">
-      <ranges>
-        <range start1="7" end1="10" start2="7" end2="8" changelist="e83d990b-ed2a-47f2-81ef-c4e2ca309973" />
-        <range start1="20" end1="20" start2="18" end2="19" changelist="e83d990b-ed2a-47f2-81ef-c4e2ca309973" />
-        <range start1="72" end1="72" start2="71" end2="77" changelist="e83d990b-ed2a-47f2-81ef-c4e2ca309973" />
-        <range start1="73" end1="75" start2="78" end2="80" changelist="e83d990b-ed2a-47f2-81ef-c4e2ca309973" />
-        <range start1="95" end1="96" start2="100" end2="101" changelist="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" />
-        <range start1="103" end1="103" start2="108" end2="125" changelist="e83d990b-ed2a-47f2-81ef-c4e2ca309973" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -203,7 +148,7 @@
       <workItem from="1749105872694" duration="101000" />
       <workItem from="1749142102371" duration="1027000" />
       <workItem from="1749215858584" duration="2440000" />
-      <workItem from="1749230102721" duration="8910000" />
+      <workItem from="1749230102721" duration="8970000" />
     </task>
     <servers />
   </component>

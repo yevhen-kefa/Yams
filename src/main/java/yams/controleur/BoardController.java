@@ -179,6 +179,7 @@ public class BoardController {
         if (rollCount < 4) {
             rerollCount.setText((3 - rollCount) + "/3");
         }
+        
     }
     // Button Return
     @FXML
