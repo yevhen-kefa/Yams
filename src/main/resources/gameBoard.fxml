@@ -23,11 +23,11 @@
          <bottom>
             <HBox alignment="CENTER" prefHeight="0.0" prefWidth="1920.0" spacing="250.0" BorderPane.alignment="CENTER">
                <children>
-                  <!--<Button fx:id="btnEnd" mnemonicParsing="false" onAction="#btnEnd" prefHeight="125.0" prefWidth="319.0" style="-fx-background-color: #B30048;" text="End Turn" textFill="WHITE">
+                  <Button fx:id="btnEnd" mnemonicParsing="false" onAction="#btnEnd" prefHeight="125.0" prefWidth="319.0" style="-fx-background-color: #B30048;" text="End Turn" textFill="WHITE">
                      <font>
                         <Font size="43.0" />
                      </font>
-                  </Button>-->
+                  </Button>
                   <Label style="-fx-background-color: #d4cfcf;" text="Player" textFill="WHITE">
                      <font>
                         <Font size="65.0" />
@@ -36,11 +36,20 @@
                         <Insets bottom="20.0" left="120.0" right="120.0" top="20.0" />
                      </padding>
                   </Label>
-                  <Button fx:id="btnReroll" mnemonicParsing="false" onAction="#btnReroll" prefHeight="125.0" prefWidth="319.0" style="-fx-background-color: #B30048;" text="Reroll" textFill="WHITE">
-                     <font>
-                        <Font size="43.0" />
-                     </font>
-                  </Button>
+                  <VBox alignment="CENTER" prefHeight="134.0" prefWidth="315.0">
+                     <children>
+                        <Label fx:id="rerollCount" alignment="CENTER" prefHeight="46.0" prefWidth="79.0" style="-fx-background-color: BLACK;" text="3/3" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="31.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnReroll" mnemonicParsing="false" onAction="#btnReroll" prefHeight="125.0" prefWidth="319.0" style="-fx-background-color: #B30048;" text="Reroll" textFill="WHITE">
+                           <font>
+                              <Font size="43.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
                </children>
             </HBox>
          </bottom>
@@ -54,18 +63,6 @@
                </BorderPane.margin>
             </VBox>
          </right>
-         <center>
-            <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="BOTTOM_CENTER">
-               <children>
-                  <ImageView fitHeight="576.0" fitWidth="863.0" preserveRatio="false">
-                     <image>
-                        <Image url="@img/green.png" />
-                     </image>
-                  </ImageView>
-                  <AnchorPane fx:id="anchorDice" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="863.0" />
-               </children>
-            </StackPane>
-         </center>
          <left>
             <VBox fx:id="scoresVBox" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="809.0" prefWidth="220.0" spacing="20.0" style="-fx-background-color: #d4cfcf;" BorderPane.alignment="CENTER">
                <children>
@@ -98,6 +95,33 @@
                </BorderPane.margin>
             </Button>
          </top>
+         <center>
+            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <StackPane alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="576.0" fitWidth="863.0" preserveRatio="false">
+                           <image>
+                              <Image url="@img/green.png" />
+                           </image>
+                        </ImageView>
+                        <AnchorPane fx:id="anchorDice" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="863.0" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="200.0" />
+                     </HBox.margin>
+                  </StackPane>
+                  <VBox fx:id="saveDice" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="150.0">
+                     <children>
+                        <Button mnemonicParsing="false" text="Button" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="50.0" top="150.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+         </center>
       </BorderPane>
    </children>
 </StackPane>

@@ -26,7 +26,6 @@ public class Scoresheet {
     scoreMap.put(pattern, pattern.score(board));
   }
 
-  
   public int scoreTotal() {
     return scoreMap.values().stream().mapToInt(Integer::intValue).sum();
   }

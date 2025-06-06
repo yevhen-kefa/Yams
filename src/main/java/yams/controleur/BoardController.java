@@ -31,30 +31,32 @@ public class BoardController {
     private Button btnReturn;
 
     @FXML
+    private Button btnEnd;
+
+    @FXML
     private Label nomPlayer;
 
     @FXML
     private Label scrPlayer;
 
-
     @FXML
     private Label rerollCount;
 
+    private VBox staticSaveDice;
+
+    @FXML
+    private VBox saveDice;
+
+    @FXML
+    private VBox scoresVBox;
+
+    @FXML
+    private VBox playersVBox;
     @FXML
     private AnchorPane anchorDice;
 
     private final List<DiceView> diceViews = new ArrayList<>();
     private Board board;
-
-    @FXML
-    private VBox playersVBox;
-
-
-    @FXML
-    private StackPane rootLayout;
-
-    @FXML
-    private VBox scoresVBox;
 
     private List<PlayerModel> party;
 
@@ -136,17 +138,33 @@ public class BoardController {
         }
     }
 
+
+
     private int rollCount = 0;
 
     // Méthode d'initialisation appelée automatiquement après le chargement du FXML
     @FXML
     public void initialize() {
         board = new Board();
-        for (int i = 0; i < 7; i++) {
-
+        /*for (int i = 0; i < 7; i++) {
+            for (PlayerModel player : party) {
+                playTurn(player);
+            }
         }
     }
 
+    private void playTurn(PlayerModel player) {
+        rollCount = 3;*/
+    }
+
+    public void moveToSaved(DiceView diceView) {
+        if (!saveDice.getChildren().contains(diceView)) {
+            diceView.setLayoutX(0);
+            diceView.setLayoutY(0);
+            diceView.setRotate(0);
+            saveDice.getChildren().add(diceView);
+        }
+    }
 
     // Action liée au bouton de relance des dés
     @FXML
@@ -179,13 +197,18 @@ public class BoardController {
         if (rollCount < 4) {
             rerollCount.setText((3 - rollCount) + "/3");
         }
-        
+
     }
     // Button Return
     @FXML
     void btnReturn() {
         Stage stage = (Stage) btnReturn.getScene().getWindow();
         nav.goTo(stage, "/mode.fxml");
+    }
+
+    @FXML
+    void btnEnd() {
+
     }
 
     //Places a cube without intersecting with others
@@ -224,6 +247,8 @@ public class BoardController {
         current.setPosition(x, y);
         current.setRandomRotation();
     }
+
+
     private void endTurn(PlayerModel player, CombinationModel combination) {
         player.updateScore(combination, board);  // score recording
         refreshPlayerScores();                   // VBox update with points

@@ -1,10 +1,13 @@
 package yams.vue;
 
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import yams.model.game.Dice;
+import yams.controleur.BoardController;
+
 
 public class DiceView extends StackPane {
     private final Rectangle background;
@@ -27,6 +30,13 @@ public class DiceView extends StackPane {
         label.setStyle("-fx-font-size: 24px; -fx-font-weight: bold;");
 
         getChildren().addAll(background, label);
+
+        setOnMouseClicked(event -> {
+            if (getParent() != null && getParent().getClass() == AnchorPane.class) {
+                ((AnchorPane) getParent()).getChildren().remove(this);
+            }
+            BoardController.moveToSaved(this);
+        });
     }
     // Update dices
     public void updateDice(Dice newDice) {
