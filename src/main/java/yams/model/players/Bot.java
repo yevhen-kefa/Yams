@@ -1,5 +1,6 @@
 package yams.model.players;
 
+import javafx.scene.paint.Color;
 import yams.model.combinations.CombinationModel;
 
 import java.util.ArrayList;
@@ -12,7 +13,17 @@ public class Bot implements PlayerModel {
     // The bot's scoresheet (initialized with an empty name)
     private Scoresheet scoresheet;
     private final Set<CombinationModel> usingCombination = new HashSet<>();
+    private Color color;
 
+    @Override
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    @Override
+    public Color getColor() {
+        return color;
+    }
     @Override
     public boolean isBot() {
         return true;

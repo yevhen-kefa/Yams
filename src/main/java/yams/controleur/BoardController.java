@@ -1,15 +1,18 @@
 package yams.controleur;
 
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import yams.model.NavAgent;
 import yams.model.game.Board;
 import yams.model.game.Dice;
+import yams.model.players.PlayerModel;
 import yams.vue.DiceView;
 
 import java.util.ArrayList;
@@ -31,35 +34,94 @@ public class BoardController {
     @FXML
     private Label scrPlayer;
 
+
+    @FXML
+    private Label rerollCount;
+
     @FXML
     private AnchorPane anchorDice;
 
     private final List<DiceView> diceViews = new ArrayList<>();
     private Board board;
 
-    //Creating and adding dices to the screen
+    @FXML
+    private VBox playersVBox;
+
+
+    @FXML
+    private StackPane rootLayout;
+
+    @FXML
+    private VBox scoresVBox;
+
+    private List<PlayerModel> players;
+
+    public void setPlayers(List<PlayerModel> players) {
+        this.players = players;
+        updatePlayersDisplay();
+    }
+
+    private void updatePlayersDisplay() {
+        playersVBox.getChildren().clear();
+
+        for (PlayerModel player : players) {
+            Label playerLabel = new Label(player.getName());
+
+            Color fxColor = player.getColor();
+            if (fxColor == null) {
+                fxColor = Color.BLACK;
+            }
+
+            String colorHex = String.format("#%02x%02x%02x",
+                    (int) (fxColor.getRed() * 255),
+                    (int) (fxColor.getGreen() * 255),
+                    (int) (fxColor.getBlue() * 255)
+            );
+
+            playerLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: " + colorHex + ";");
+            playersVBox.getChildren().add(playerLabel);
+        }
+    }
+    private int rollCount = 0;
+
+    // Méthode d'initialisation appelée automatiquement après le chargement du FXML
     @FXML
     public void initialize() {
         board = new Board();
+    }
 
-        Platform.runLater(() -> {
+
+    // Action liée au bouton de relance des dés
+    @FXML
+    void btnReroll(ActionEvent event) {
+        double diceSize = 114; // Розмір кубика
+
+        if (rollCount == 0) {
             for (int i = 0; i < 5; i++) {
                 Dice dice = board.getDice(i);
                 DiceView diceView = new DiceView(dice);
                 diceViews.add(diceView);
                 anchorDice.getChildren().add(diceView);
-                placeDiceWithoutOverlap(diceView, i);
             }
-        });
-    }
-    //Button rerol
-    @FXML
-    void btnReroll(ActionEvent event) {
+
+            btnReroll.setText("Reroll");
+        } else if (rollCount == 2) {
+            btnReroll.setText("No rolls left");
+            btnReroll.setDisable(true);
+        }
+
         for (int i = 0; i < 5; i++) {
             Dice newDice = board.reroll(i);
             DiceView diceView = diceViews.get(i);
             diceView.updateDice(newDice);
+
+            // Використовуємо вже готову функцію для позиціонування та ротації
             placeDiceWithoutOverlap(diceView, i);
+        }
+
+        rollCount++;
+        if (rollCount < 4) {
+            rerollCount.setText((3 - rollCount) + "/3");
         }
     }
     // Button Return
@@ -71,7 +133,7 @@ public class BoardController {
 
     //Places a cube without intersecting with others
     private void placeDiceWithoutOverlap(DiceView current, int index) {
-        double diceSize = current.getDiceSize()+50;
+        double diceSize = 114;
         double maxWidth = anchorDice.getWidth() - diceSize;
         double maxHeight = anchorDice.getHeight() - diceSize;
 
