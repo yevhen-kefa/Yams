@@ -37,7 +37,7 @@ public class Scoresheet {
   @Override
   public String toString() {
     var builder = new StringBuilder();
-    builder.append(name()).append(System.lineSeparator());
+    //builder.append(name()).append(System.lineSeparator());
     for (var entry : scoreMap.entrySet()) {
       builder.append(entry.getKey()).append(" : ").append(entry.getValue()).append(System.lineSeparator());
     }

@@ -1,6 +1,5 @@
 package yams.controleur;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -10,6 +9,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import yams.model.NavAgent;
+import yams.model.combinations.CombinationModel;
 import yams.model.game.Board;
 import yams.model.game.Dice;
 import yams.model.players.PlayerModel;
@@ -21,6 +21,8 @@ import java.util.List;
 public class BoardController {
 
     private final NavAgent nav = new NavAgent();
+    private final List<Label> playerScoreLabels = new ArrayList<>();
+
 
     @FXML
     private Button btnReroll;
@@ -54,17 +56,20 @@ public class BoardController {
     @FXML
     private VBox scoresVBox;
 
-    private List<PlayerModel> players;
+    private List<PlayerModel> party;
 
-    public void setPlayers(List<PlayerModel> players) {
-        this.players = players;
+    private int currentPlayerIndex = 0;
+
+    public void setParty(List<PlayerModel> party) {
+        this.party = party;
         updatePlayersDisplay();
+        updateCurrentPlayerDisplay(party.get(0));
     }
 
     private void updatePlayersDisplay() {
         playersVBox.getChildren().clear();
 
-        for (PlayerModel player : players) {
+        for (PlayerModel player : party) {
             Label playerLabel = new Label(player.getName());
 
             Color fxColor = player.getColor();
@@ -82,19 +87,70 @@ public class BoardController {
             playersVBox.getChildren().add(playerLabel);
         }
     }
+
+    private void updateScoresDisplay() {
+        scoresVBox.getChildren().clear();
+        playerScoreLabels.clear();
+
+        for (PlayerModel player : party) {
+            int totalScore = player.getScoresheet().scoreTotal();
+            Label scoreLabel = new Label(player.getName() + ": " + totalScore);
+
+            Color fxColor = player.getColor() != null ? player.getColor() : Color.BLACK;
+            String colorHex = String.format("#%02x%02x%02x",
+                    (int) (fxColor.getRed() * 255),
+                    (int) (fxColor.getGreen() * 255),
+                    (int) (fxColor.getBlue() * 255));
+
+            scoreLabel.setStyle("-fx-font-size: 22px; -fx-text-fill: " + colorHex + ";");
+            scoresVBox.getChildren().add(scoreLabel);
+            playerScoreLabels.add(scoreLabel);
+        }
+    }
+
+    private void updateCurrentPlayerDisplay(PlayerModel player) {
+        // name setup
+        nomPlayer.setText(player.getName());
+
+        // color setup
+        Color fxColor = player.getColor();
+        if (fxColor == null) fxColor = Color.BLACK;
+
+        String colorHex = String.format("#%02x%02x%02x",
+                (int) (fxColor.getRed() * 255),
+                (int) (fxColor.getGreen() * 255),
+                (int) (fxColor.getBlue() * 255)
+        );
+        nomPlayer.setStyle("-fx-text-fill: " + colorHex + "; -fx-font-size: 25px;");
+
+        // score setup
+        scrPlayer.setText(player.getScoresheet().toString());
+
+    }
+
+    public void refreshPlayerScores() {
+        for (int i = 0; i < party.size(); i++) {
+            PlayerModel player = party.get(i);
+            Label label = playerScoreLabels.get(i);
+            label.setText(player.getName() + ": " + player.getScoresheet().scoreTotal());
+        }
+    }
+
     private int rollCount = 0;
 
     // Méthode d'initialisation appelée automatiquement après le chargement du FXML
     @FXML
     public void initialize() {
         board = new Board();
+        for (int i = 0; i < 7; i++) {
+
+        }
     }
 
 
     // Action liée au bouton de relance des dés
     @FXML
-    void btnReroll(ActionEvent event) {
-        double diceSize = 114; // Розмір кубика
+    void btnReroll() {
 
         if (rollCount == 0) {
             for (int i = 0; i < 5; i++) {
@@ -126,7 +182,7 @@ public class BoardController {
     }
     // Button Return
     @FXML
-    void btnReturn(ActionEvent event) {
+    void btnReturn() {
         Stage stage = (Stage) btnReturn.getScene().getWindow();
         nav.goTo(stage, "/mode.fxml");
     }
@@ -139,7 +195,8 @@ public class BoardController {
 
         boolean overlap;
         int attempts = 0;
-        double x = 0, y = 0;
+        double x;
+        double y;
 
         do {
             overlap = false;
@@ -166,4 +223,22 @@ public class BoardController {
         current.setPosition(x, y);
         current.setRandomRotation();
     }
+    private void endTurn(PlayerModel player, CombinationModel combination) {
+        player.updateScore(combination, board);  // score recording
+        refreshPlayerScores();                   // VBox update with points
+        //TODO The logic of switching to another player
+    }
+    private void goToNextPlayer() {
+        currentPlayerIndex = (currentPlayerIndex + 1) % party.size();
+        PlayerModel next = party.get(currentPlayerIndex);
+        updateCurrentPlayerDisplay(next);
+    }
+/*
+    void onConfirmCombination(ActionEvent event) {
+        CombinationModel chosen = ... // отримай вибрану комбінацію
+        PlayerModel current = players.get(currentPlayerIndex);
+        endTurn(current, chosen);
+    }
+*/
+
 }

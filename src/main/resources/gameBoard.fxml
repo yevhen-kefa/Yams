@@ -23,11 +23,11 @@
          <bottom>
             <HBox alignment="CENTER" prefHeight="0.0" prefWidth="1920.0" spacing="250.0" BorderPane.alignment="CENTER">
                <children>
-                  <ImageView fitHeight="210.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/hand.png" />
-                     </image>
-                  </ImageView>
+                  <!--<Button fx:id="btnEnd" mnemonicParsing="false" onAction="#btnEnd" prefHeight="125.0" prefWidth="319.0" style="-fx-background-color: #B30048;" text="End Turn" textFill="WHITE">
+                     <font>
+                        <Font size="43.0" />
+                     </font>
+                  </Button>-->
                   <Label style="-fx-background-color: #d4cfcf;" text="Player" textFill="WHITE">
                      <font>
                         <Font size="65.0" />
@@ -67,26 +67,16 @@
             </StackPane>
          </center>
          <left>
-            <VBox fx:id="scoreVBox" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="809.0" prefWidth="220.0" spacing="20.0" style="-fx-background-color: #d4cfcf;" BorderPane.alignment="CENTER">
+            <VBox fx:id="scoresVBox" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="809.0" prefWidth="220.0" spacing="20.0" style="-fx-background-color: #d4cfcf;" BorderPane.alignment="CENTER">
                <children>
                   <Label fx:id="nomPlayer" text="Player1">
                      <font>
                         <Font size="25.0" />
                      </font>
                   </Label>
-                  <Label text="Player2">
+                  <Label fx:id="scrPlayer" text="Score: 0">
                      <font>
-                        <Font size="25.0" />
-                     </font>
-                  </Label>
-                  <Label text="Player3">
-                     <font>
-                        <Font size="25.0" />
-                     </font>
-                  </Label>
-                  <Label text="Player4">
-                     <font>
-                        <Font size="25.0" />
+                        <Font size="20.0" />
                      </font>
                   </Label>
                </children>

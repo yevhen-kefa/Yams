@@ -5,9 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TextFormatter;
+import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import yams.model.NavAgent;
@@ -18,6 +16,7 @@ import yams.model.players.PlayerModel;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.UnaryOperator;
 
 public class SoloController {
@@ -70,9 +69,15 @@ public class SoloController {
             );
 
 
+            String name = promptPlayerName(1);
+            if (name == null || name.trim().isEmpty()) {
+                showError("Player " + (1) + "'s name cannot be empty.");
+                return;
+            }
+
             Human human = new Human();
-            human.setName("Player1");
-            human.setColor(playerColors.get(0));
+            human.setName(name.trim());
+            human.setColor(playerColors.get(1));
             players.add(human);
 
             // add bots
@@ -93,13 +98,30 @@ public class SoloController {
             Parent root = loader.load();
 
             BoardController controller = loader.getController();
-            controller.setPlayers(players);
+            controller.setParty(players);
 
             Stage stage = (Stage) btnPlay.getScene().getWindow();
             stage.setScene(new Scene(root));
         } catch (IOException | NumberFormatException e) {
             e.printStackTrace(); // Обробка помилок
         }
+    }
+    private String promptPlayerName(int playerNumber) {
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("Player Name");
+        dialog.setHeaderText(null);
+        dialog.setContentText("Enter name for Player " + playerNumber + ":");
+
+        Optional<String> result = dialog.showAndWait();
+        return result.orElse(null);
+    }
+
+    private void showError(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Input Error");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
 }
