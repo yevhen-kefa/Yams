@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" name="Changes" comment="last">
-      <change afterPath="$PROJECT_DIR$/src/main/java/yams/vue/CombinationSelectionView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/controleur/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/BoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/players/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/players/Human.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/vue/ConsoleView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/yams/controleur/BoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/controleur/BoardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/yams/controleur/FriendController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/controleur/FriendController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/yams/model/players/Human.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/model/players/Human.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/yams/vue/ConsoleView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-    </list>
+    <list default="true" id="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" name="Changes" comment="last" />
     <list id="5791d63c-267e-4189-a012-88054f0cdb47" name="Changes by kefae" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/yams/controleur/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/BoardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yams/controleur/FriendController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/FriendController.java" afterDir="false" />
@@ -50,17 +38,6 @@
     "accountId": "de3e4e86-bf29-4bf7-b35f-fb624d3f5304"
   }
 }]]></component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/yams/controleur/BoardController.java">
-      <ranges>
-        <range start1="14" end1="14" start2="14" end2="16" changelist="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" />
-        <range start1="160" end1="160" start2="162" end2="165" changelist="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" />
-        <range start1="162" end1="162" start2="167" end2="185" changelist="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" />
-        <range start1="164" end1="165" start2="187" end2="193" changelist="5791d63c-267e-4189-a012-88054f0cdb47" />
-        <range start1="230" end1="231" start2="258" end2="261" changelist="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" />
-      </ranges>
-    </file>
-  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -199,7 +176,7 @@
       <workItem from="1749142102371" duration="1027000" />
       <workItem from="1749215858584" duration="2440000" />
       <workItem from="1749230102721" duration="14250000" />
-      <workItem from="1749398841885" duration="13985000" />
+      <workItem from="1749398841885" duration="14301000" />
     </task>
     <task id="LOCAL-00001" summary="last">
       <option name="closed" value="true" />
@@ -225,7 +202,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749408051388</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="last">
+      <option name="closed" value="true" />
+      <created>1749414971523</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1749414971523</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
