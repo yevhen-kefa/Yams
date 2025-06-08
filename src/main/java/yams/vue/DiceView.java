@@ -13,12 +13,14 @@ public class DiceView extends StackPane {
     private final Rectangle background;
     private final Label label;
     private Dice dice;
+    private BoardController controller;
 
     private static final double SIZE = 80;
 
     //Sets the design for the dices
-    public DiceView(Dice dice) {
+    public DiceView(Dice dice, BoardController controller)  {
         this.dice = dice;
+        this.controller = controller;
 
         background = new Rectangle(SIZE, SIZE);
         background.setArcWidth(20);
@@ -35,7 +37,7 @@ public class DiceView extends StackPane {
             if (getParent() != null && getParent().getClass() == AnchorPane.class) {
                 ((AnchorPane) getParent()).getChildren().remove(this);
             }
-            BoardController.moveToSaved(this);
+            controller.moveToSaved(this);
         });
     }
     // Update dices

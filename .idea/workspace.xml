@@ -7,17 +7,11 @@
     <list default="true" id="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yams/controleur/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/BoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/players/Scoresheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/players/Scoresheet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yams/vue/DiceView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/vue/DiceView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gameBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gameBoard.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/yams/controleur/BoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/controleur/BoardController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/yams/vue/DiceView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/vue/DiceView.class" afterDir="false" />
     </list>
     <list id="5791d63c-267e-4189-a012-88054f0cdb47" name="Changes by kefae" comment="" />
-    <list id="e83d990b-ed2a-47f2-81ef-c4e2ca309973" name="Changes by nachn" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/controleur/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/BoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/gameBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/gameBoard.fxml" afterDir="false" />
-    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,24 +26,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/yams/controleur/BoardController.java">
-      <ranges>
-        <range start1="31" end1="31" start2="31" end2="34" changelist="e83d990b-ed2a-47f2-81ef-c4e2ca309973" />
-        <range start1="37" end1="37" start2="40" end2="43" changelist="e83d990b-ed2a-47f2-81ef-c4e2ca309973" />
-        <range start1="38" end1="38" start2="44" end2="45" changelist="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" />
-        <range start1="40" end1="41" start2="47" end2="48" changelist="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" />
-        <range start1="42" end1="42" start2="49" end2="54" changelist="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" />
-        <range start1="47" end1="57" start2="59" end2="59" changelist="e83d990b-ed2a-47f2-81ef-c4e2ca309973" />
-        <range start1="137" end1="137" start2="139" end2="141" changelist="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" />
-        <range start1="144" end1="146" start2="148" end2="152" changelist="e83d990b-ed2a-47f2-81ef-c4e2ca309973" />
-        <range start1="149" end1="149" start2="155" end2="167" changelist="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" />
-        <range start1="181" end1="182" start2="199" end2="200" changelist="e83d990b-ed2a-47f2-81ef-c4e2ca309973" />
-        <range start1="189" end1="189" start2="207" end2="212" changelist="e83d990b-ed2a-47f2-81ef-c4e2ca309973" />
-        <range start1="226" end1="226" start2="249" end2="251" changelist="e83d990b-ed2a-47f2-81ef-c4e2ca309973" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -173,7 +149,8 @@
       <workItem from="1749105872694" duration="101000" />
       <workItem from="1749142102371" duration="1027000" />
       <workItem from="1749215858584" duration="2440000" />
-      <workItem from="1749230102721" duration="14250000" />
+      <workItem from="1749230102721" duration="15107000" />
+      <workItem from="1749368583023" duration="1203000" />
     </task>
     <servers />
   </component>

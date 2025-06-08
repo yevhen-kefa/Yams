@@ -173,7 +173,7 @@ public class BoardController {
         if (rollCount == 0) {
             for (int i = 0; i < 5; i++) {
                 Dice dice = board.getDice(i);
-                DiceView diceView = new DiceView(dice);
+                DiceView diceView = new DiceView(dice, this);
                 diceViews.add(diceView);
                 anchorDice.getChildren().add(diceView);
             }
