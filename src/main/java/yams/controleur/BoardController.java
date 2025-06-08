@@ -185,7 +185,12 @@ public class BoardController {
 
                 Thread.sleep(1500);
                 javafx.application.Platform.runLater(() -> {
-                    currentPlayer.chooseCombination();
+                    String result = currentPlayer.chooseCombination();
+                    if (result != null && !result.isEmpty()) {
+                        finishTurn(result);
+                    } else {
+                        showError("Bot could not choose a combination.");
+                    }
                 });
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();

@@ -13,10 +13,13 @@ public class DiceView extends StackPane {
     private final Label label;
     private Dice dice;
 
+    private boolean save = false;
+    private boolean permanentlySaved = false;
+
     private static final double SIZE = 80;
 
     //Sets the design for the dices
-    public DiceView(Dice dice) {
+    public DiceView(Dice dice, BoardController controller) {
         this.dice = dice;
 
         Rectangle background = new Rectangle(SIZE, SIZE);
@@ -39,9 +42,26 @@ public class DiceView extends StackPane {
             if (getParent() != null && getParent().getClass() == AnchorPane.class) {
                 ((AnchorPane) getParent()).getChildren().remove(this);
             }
-            //BoardController.moveToSaved(this);
+            controller.toggleDicePlacement(this);
         });
     }
+
+    public boolean isSaved() {
+        return save;
+    }
+    public boolean isPermanentlySaved() {
+        return permanentlySaved;
+    }
+
+    public void setSaved(boolean locked) {
+        this.save = locked;
+    }
+    public void setPermanentlySaved(boolean locked) {
+        this.permanentlySaved = locked;
+    }
+
+
+
     // Update dices
     public void updateDice(Dice newDice) {
         this.dice = newDice;
