@@ -16,7 +16,6 @@ import yams.vue.DiceView;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class BoardController {
     private final NavAgent nav = new NavAgent();
@@ -29,8 +28,6 @@ public class BoardController {
     private int currentRound = 1;
     private final int MAX_ROUNDS = 7;
     private VBox staticSaveDice;
-
-
 
     @FXML
     private Button btnReroll;
@@ -63,7 +60,6 @@ public class BoardController {
             PlayerModel player = party.get(i);
             Label playerLabel = new Label(player.getName());
 
-            // Mettre en évidence le joueur actuel
             if (i == currentPlayerIndex) {
                 playerLabel.setStyle("-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #FFD700; -fx-background-color: rgba(255,215,0,0.3); -fx-padding: 5;");
             } else {
@@ -82,11 +78,8 @@ public class BoardController {
         }
     }
 
-
     private void updateCurrentPlayerDisplay(PlayerModel player) {
-        // name setup
         nomPlayer.setText(player.getName());
-        // color setup
         Color fxColor = player.getColor();
         if (fxColor == null) fxColor = Color.BLACK;
 
@@ -99,7 +92,6 @@ public class BoardController {
         scrPlayer.setText(player.getScoresheet().toString());
     }
 
-    // Méthode d'initialisation appelée automatiquement après le chargement du FXML
     @FXML
     public void initialize() {
         board = new Board();
@@ -115,19 +107,15 @@ public class BoardController {
             saveDice.getChildren().add(diceView);
         }
     }
+
     public void toggleDicePlacement(DiceView diceView) {
         if (saveDice.getChildren().contains(diceView)) {
-            // Видалити з VBox і повернути на дошку
             saveDice.getChildren().remove(diceView);
             anchorDice.getChildren().add(diceView);
-
-            // Розмістити без перекриття
             placeDiceWithoutOverlap(diceView, diceViews.indexOf(diceView));
         } else {
             anchorDice.getChildren().remove(diceView);
             saveDice.getChildren().add(diceView);
-
-            // Скинути позицію/поворот (не обов'язково, але зручно)
             diceView.setLayoutX(0);
             diceView.setLayoutY(0);
             diceView.setRotate(0);
@@ -137,58 +125,47 @@ public class BoardController {
     private void startNewTurn() {
         if (party == null || party.isEmpty()) return;
 
-        // Vérifier si le jeu est terminé
         if (currentRound > MAX_ROUNDS) {
             endGame();
             return;
         }
 
-        // Réinitialiser pour le nouveau tour
         rollCount = 0;
         canChooseCombination = true;
-        board = new Board(); // Nouveau plateau pour ce tour
+        board = new Board();
 
-        // Nettoyer les dés précédents
         anchorDice.getChildren().clear();
         diceViews.clear();
 
-        // Mettre à jour l'affichage
         updateCurrentPlayerDisplay(party.get(currentPlayerIndex));
         updatePlayersDisplay();
 
-        // Vérifier si c'est un bot ou un joueur humain
         boolean isBot = party.get(currentPlayerIndex).isBot();
 
         if (isBot) {
-            // Désactiver les boutons pour les bots
             btnReroll.setDisable(true);
             btnEnd.setDisable(true);
             btnReroll.setText("Bot is playing...");
         } else {
-            // Réactiver les boutons pour les joueurs humains
             btnReroll.setDisable(false);
             btnReroll.setText("Roll Dice");
-            btnEnd.setDisable(true); // End reste désactivé jusqu'au premier lancer
+            btnEnd.setDisable(true);
         }
 
         rerollCount.setText("3/3");
 
-        // Si c'est un bot, jouer automatiquement
         if (isBot) {
             playBotTurn();
         }
     }
 
     private void playBotTurn() {
-        // Simulation simple pour le bot - vous pouvez améliorer cette logique
-        btnReroll(); // Premier lancer
+        btnReroll();
 
-        // Simuler un délai puis choisir une combinaison
         new Thread(() -> {
             try {
-                Thread.sleep(1500); // Attendre 1.5 secondes
+                Thread.sleep(1500);
                 javafx.application.Platform.runLater(() -> {
-                    // Le bot choisit automatiquement la première combinaison disponible
                     chooseBestCombinationForBot();
                 });
             } catch (InterruptedException e) {
@@ -196,34 +173,30 @@ public class BoardController {
             }
         }).start();
     }
+
     private void chooseBestCombinationForBot() {
         Bot currentPlayer = (Bot) party.get(currentPlayerIndex);
         finishTurn(currentPlayer.chooseCombination());
     }
 
-
-    // Action liée au bouton de relance des dés
     @FXML
     void btnReroll() {
-        
         boolean isBot = party != null && !party.isEmpty() && party.get(currentPlayerIndex).isBot();
 
         if (canChooseCombination && !isBot) {
-            btnEnd.setDisable(false);  // Activer seulement pour les joueurs humains
+            btnEnd.setDisable(false);
         } else {
             btnEnd.setDisable(true);
             canChooseCombination = false;
         }
 
-
         if (rollCount == 0) {
             for (int i = 0; i < 5; i++) {
                 Dice dice = board.getDice(i);
-                DiceView diceView = new DiceView(dice);
+                DiceView diceView = new DiceView(dice, this);
                 diceViews.add(diceView);
                 anchorDice.getChildren().add(diceView);
             }
-            
             btnReroll.setText("Reroll");
         } else if (rollCount == 2) {
             btnReroll.setText("No rolls left");
@@ -236,13 +209,13 @@ public class BoardController {
             diceView.updateDice(newDice);
             placeDiceWithoutOverlap(diceView, i);
         }
-        
+
         rollCount++;
         if (rollCount < 4) {
             rerollCount.setText((3 - rollCount) + "/3");
         }
     }
-    
+
     @FXML
     void btnReturn() {
         Stage stage = (Stage) btnReturn.getScene().getWindow();
@@ -251,7 +224,6 @@ public class BoardController {
 
     @FXML
     void btnEnd() {
-
         if (party.get(currentPlayerIndex).isBot()) {
             return;
         }
@@ -260,7 +232,6 @@ public class BoardController {
         if (!result.isEmpty()) {
             finishTurn(result);
         }
-
     }
 
     private void finishTurn(String combination) {
@@ -269,11 +240,9 @@ public class BoardController {
         if (!current.getScoresheet().containsCombination(CombinationModel.of(combination))) {
             current.updateScore(CombinationModel.of(combination), board);
             scrPlayer.setText(current.getScoresheet().toString());
-            // Passer au joueur suivant
             nextPlayer();
-
         } else {
-            if (!current.isBot()) { // Ne pas montrer d'erreur pour les bots
+            if (!current.isBot()) {
                 showError("You have already chosen this combination. \n Please choose another one.");
             }
         }
@@ -282,17 +251,15 @@ public class BoardController {
     private void nextPlayer() {
         currentPlayerIndex++;
 
-        // Si on a fait le tour de tous les joueurs, passer au tour suivant
         if (currentPlayerIndex >= party.size()) {
             currentPlayerIndex = 0;
             currentRound++;
         }
         btnEnd.setDisable(true);
-        // Commencer le tour du joueur suivant
         startNewTurn();
     }
+
     private void endGame() {
-        // Calculer les scores finaux et déterminer le gagnant
         PlayerModel winner = party.get(0);
         int maxScore = winner.getScoresheet().scoreTotal();
 
@@ -304,7 +271,6 @@ public class BoardController {
             }
         }
 
-        // Afficher le résultat
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Game Over");
         alert.setHeaderText("Game Finished!");
@@ -318,10 +284,8 @@ public class BoardController {
         alert.setContentText(results.toString());
         alert.showAndWait();
 
-        // Retourner au menu principal
-        btnReturn();
+        nav.goTo(btnReturn, "/menu.fxml");
     }
-
 
     private void showError(String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -331,7 +295,6 @@ public class BoardController {
         alert.showAndWait();
     }
 
-    //Places a cube without intersecting with others
     private void placeDiceWithoutOverlap(DiceView current, int index) {
         double diceSize = 114;
         double maxWidth = anchorDice.getWidth() - diceSize;
@@ -361,7 +324,6 @@ public class BoardController {
                 }
             }
             attempts++;
-            
         } while (overlap && attempts < 100);
 
         current.setPosition(x, y);

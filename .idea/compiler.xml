@@ -6,11 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Yams" />
+        <module name="yams" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="yams" target="21" />
-    </bytecodeTargetLevel>
   </component>
 </project>
