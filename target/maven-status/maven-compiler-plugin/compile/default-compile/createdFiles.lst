@@ -1,5 +1,4 @@
 yams\model\players\Human.class
-yams\controleur\GameController.class
 yams\model\game\Board.class
 yams\model\combinations\LargeStraight.class
 yams\model\combinations\CombinationModel.class

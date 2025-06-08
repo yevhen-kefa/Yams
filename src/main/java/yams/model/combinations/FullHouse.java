@@ -32,6 +32,6 @@ public record FullHouse() implements CombinationModel {
 
   @Override
   public String toString() {
-    return "Full House";
+    return "House Full";
   }
 }

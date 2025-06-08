@@ -53,16 +53,16 @@ public interface CombinationModel {
   La méthode sélectionne au hasard l'une des combinaisons prédéfinies.
   Retourne une combinaison aléatoire
    */
-  static CombinationModel of() {
+  static String of() {
     var pick = new Random().nextInt(7);
     return switch (pick) {
-        case 0 -> new Chance();
-        case 1 -> new ThreeOfAKind();
-        case 2 -> new FourOfAKind();
-        case 3 -> new SmallStraight();
-        case 4 -> new LargeStraight();
-        case 5 -> new FullHouse();
-        case 6 -> new Yahtzee();
+        case 0 -> "C";
+        case 1 -> "T";
+        case 2 -> "F";
+        case 3 -> "S";
+        case 4 -> "L";
+        case 5 -> "H";
+        case 6 -> "Y";
         default -> throw new AssertionError("Unexpected random value: " + pick);
     };
   }

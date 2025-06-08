@@ -20,6 +20,10 @@ public class Board {
     return dices.get(index);
   }
 
+  public List<Dice> getDice() {
+    return dices;
+  }
+
   public Dice reroll(int index) {
     Dice newDice = dices.get(index).reroll();
     dices.set(index, newDice);

@@ -1,163 +1,370 @@
 package yams.controleur;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import yams.model.NavAgent;
+import yams.model.combinations.CombinationModel;
 import yams.model.game.Board;
 import yams.model.game.Dice;
+import yams.model.players.Bot;
+import yams.model.players.PlayerModel;
 import yams.vue.DiceView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class BoardController {
-    // Agent de navigation pour changer de scène
-    NavAgent nav = new NavAgent();
+    private final NavAgent nav = new NavAgent();
+    private final List<DiceView> diceViews = new ArrayList<>();
+    private Board board;
+    private List<PlayerModel> party;
+    private int currentPlayerIndex = 0;
+    private boolean canChooseCombination = true;
+    private int rollCount = 0;
+    private int currentRound = 1;
+    private final int MAX_ROUNDS = 7;
+    private VBox staticSaveDice;
 
-    // Bouton pour relancer les dés
+
+
     @FXML
     private Button btnReroll;
-
-    // Bouton pour revenir à l'écran précédent
     @FXML
     private Button btnReturn;
-
-    // Label pour afficher le nom du joueur
+    @FXML
+    private Button btnEnd;
     @FXML
     private Label nomPlayer;
-
-    // Label pour afficher le score du joueur
     @FXML
     private Label scrPlayer;
-
-    // Paneau où les dés seront affichés
+    @FXML
+    private Label rerollCount;
+    @FXML
+    private VBox playersVBox;
     @FXML
     private AnchorPane anchorDice;
+    @FXML
+    private VBox saveDice;
 
-    // Liste des vues des dés (DiceView)
-    private List<DiceView> diceViews = new ArrayList<>();
+    public void setParty(List<PlayerModel> party) {
+        this.party = party;
+        updatePlayersDisplay();
+        startNewTurn();
+    }
 
-    // Modèle de la planche de jeu
-    private Board board;
+    private void updatePlayersDisplay() {
+        playersVBox.getChildren().clear();
+        for (int i = 0; i < party.size(); i++) {
+            PlayerModel player = party.get(i);
+            Label playerLabel = new Label(player.getName());
+
+            // Mettre en évidence le joueur actuel
+            if (i == currentPlayerIndex) {
+                playerLabel.setStyle("-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #FFD700; -fx-background-color: rgba(255,215,0,0.3); -fx-padding: 5;");
+            } else {
+                Color fxColor = player.getColor();
+                if (fxColor == null) {
+                    fxColor = Color.BLACK;
+                }
+                String colorHex = String.format("#%02x%02x%02x",
+                        (int) (fxColor.getRed() * 255),
+                        (int) (fxColor.getGreen() * 255),
+                        (int) (fxColor.getBlue() * 255)
+                );
+                playerLabel.setStyle("-fx-font-size: 25px; -fx-text-fill: " + colorHex + ";");
+            }
+            playersVBox.getChildren().add(playerLabel);
+        }
+    }
+
+
+    private void updateCurrentPlayerDisplay(PlayerModel player) {
+        // name setup
+        nomPlayer.setText(player.getName());
+        // color setup
+        Color fxColor = player.getColor();
+        if (fxColor == null) fxColor = Color.BLACK;
+
+        String colorHex = String.format("#%02x%02x%02x",
+                (int) (fxColor.getRed() * 255),
+                (int) (fxColor.getGreen() * 255),
+                (int) (fxColor.getBlue() * 255)
+        );
+        nomPlayer.setStyle("-fx-text-fill: " + colorHex + "; -fx-font-size: 25px;");
+        scrPlayer.setText(player.getScoresheet().toString());
+    }
 
     // Méthode d'initialisation appelée automatiquement après le chargement du FXML
     @FXML
     public void initialize() {
         board = new Board();
+        btnEnd.setDisable(true);
+        rerollCount.setText("3/3");
+    }
 
-        // Exécuter le code après que la scène soit complètement chargée
-        javafx.application.Platform.runLater(() -> {
-            double maxWidth = anchorDice.getWidth() - 80;   // Largeur maximale
-            double maxHeight = anchorDice.getHeight() - 80; // Hauteur maximale
-            double diceSize = 80; // Taille supposée du dé
-            double diceCollision = 150;
+    public void moveToSaved(DiceView diceView) {
+        if (!saveDice.getChildren().contains(diceView)) {
+            diceView.setLayoutX(0);
+            diceView.setLayoutY(0);
+            diceView.setRotate(0);
+            saveDice.getChildren().add(diceView);
+        }
+    }
+    public void toggleDicePlacement(DiceView diceView) {
+        if (saveDice.getChildren().contains(diceView)) {
+            // Видалити з VBox і повернути на дошку
+            saveDice.getChildren().remove(diceView);
+            anchorDice.getChildren().add(diceView);
 
-            for (int i = 0; i < 5; i++) {
-                Dice dice = board.getDice(i);
-                DiceView diceView = new DiceView(dice);
+            // Розмістити без перекриття
+            placeDiceWithoutOverlap(diceView, diceViews.indexOf(diceView));
+        } else {
+            anchorDice.getChildren().remove(diceView);
+            saveDice.getChildren().add(diceView);
 
-                boolean overlap;
-                int attempts = 0;
-                double randomX = 0;
-                double randomY = 0;
+            // Скинути позицію/поворот (не обов'язково, але зручно)
+            diceView.setLayoutX(0);
+            diceView.setLayoutY(0);
+            diceView.setRotate(0);
+        }
+    }
 
-                // Générer une position sans chevauchement
-                do {
-                    overlap = false;
-                    randomX = Math.random() * maxWidth;
-                    randomY = Math.random() * maxHeight;
+    private void startNewTurn() {
+        if (party == null || party.isEmpty()) return;
 
-                    for (DiceView existing : diceViews) {
-                        double x1 = existing.getLayoutX();
-                        double y1 = existing.getLayoutY();
-                        double x2 = randomX;
-                        double y2 = randomY;
+        // Vérifier si le jeu est terminé
+        if (currentRound > MAX_ROUNDS) {
+            endGame();
+            return;
+        }
 
-                        if (x1 < x2 + diceCollision && x1 + diceCollision > x2 &&
-                                y1 < y2 + diceCollision && y1 + diceCollision > y2) {
-                            overlap = true;
-                            break;
-                        }
-                    }
-                    attempts++;
-                } while (overlap && attempts < 100);
+        // Réinitialiser pour le nouveau tour
+        rollCount = 0;
+        canChooseCombination = true;
+        board = new Board(); // Nouveau plateau pour ce tour
 
-                // Appliquer une rotation aléatoire entre -30 et +30 degrés
-                double randomRotation = -30 + Math.random() * 60;
-                diceView.setRotate(randomRotation);
+        // Nettoyer les dés précédents
+        anchorDice.getChildren().clear();
+        diceViews.clear();
 
-                // Positionner et ajouter à l'interface
-                diceView.setLayoutX(randomX);
-                diceView.setLayoutY(randomY);
-                diceViews.add(diceView);
-                anchorDice.getChildren().add(diceView);
+        // Mettre à jour l'affichage
+        updateCurrentPlayerDisplay(party.get(currentPlayerIndex));
+        updatePlayersDisplay();
+
+        // Vérifier si c'est un bot ou un joueur humain
+        boolean isBot = party.get(currentPlayerIndex).isBot();
+
+        if (isBot) {
+            // Désactiver les boutons pour les bots
+            btnReroll.setDisable(true);
+            btnEnd.setDisable(true);
+            btnReroll.setText("Bot is playing...");
+        } else {
+            // Réactiver les boutons pour les joueurs humains
+            btnReroll.setDisable(false);
+            btnReroll.setText("Roll Dice");
+            btnEnd.setDisable(true); // End reste désactivé jusqu'au premier lancer
+        }
+
+        rerollCount.setText("3/3");
+
+        // Si c'est un bot, jouer automatiquement
+        if (isBot) {
+            playBotTurn();
+        }
+    }
+
+    private void playBotTurn() {
+        // Simulation simple pour le bot - vous pouvez améliorer cette logique
+        btnReroll(); // Premier lancer
+
+        // Simuler un délai puis choisir une combinaison
+        new Thread(() -> {
+            try {
+                Thread.sleep(1500); // Attendre 1.5 secondes
+                javafx.application.Platform.runLater(() -> {
+                    // Le bot choisit automatiquement la première combinaison disponible
+                    chooseBestCombinationForBot();
+                });
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
             }
-        });
+        }).start();
+    }
+    private void chooseBestCombinationForBot() {
+        Bot currentPlayer = (Bot) party.get(currentPlayerIndex);
+        finishTurn(currentPlayer.chooseCombination());
     }
 
 
     // Action liée au bouton de relance des dés
     @FXML
-    void btnReroll(ActionEvent event) {
-        double maxWidth = anchorDice.getWidth() - 80;
-        double maxHeight = anchorDice.getHeight() - 80;
-        double diceSize = 80;
+    void btnReroll() {
+        
+        boolean isBot = party != null && !party.isEmpty() && party.get(currentPlayerIndex).isBot();
+
+        if (canChooseCombination && !isBot) {
+            btnEnd.setDisable(false);  // Activer seulement pour les joueurs humains
+        } else {
+            btnEnd.setDisable(true);
+            canChooseCombination = false;
+        }
+
+
+        if (rollCount == 0) {
+            for (int i = 0; i < 5; i++) {
+                Dice dice = board.getDice(i);
+                DiceView diceView = new DiceView(dice);
+                diceViews.add(diceView);
+                anchorDice.getChildren().add(diceView);
+            }
+            
+            btnReroll.setText("Reroll");
+        } else if (rollCount == 2) {
+            btnReroll.setText("No rolls left");
+            btnReroll.setDisable(true);
+        }
 
         for (int i = 0; i < 5; i++) {
-            // Relancer le dé côté modèle
             Dice newDice = board.reroll(i);
             DiceView diceView = diceViews.get(i);
-
-            // Mettre à jour la valeur du dé dans la vue
             diceView.updateDice(newDice);
+            placeDiceWithoutOverlap(diceView, i);
+        }
+        
+        rollCount++;
+        if (rollCount < 4) {
+            rerollCount.setText((3 - rollCount) + "/3");
+        }
+    }
+    
+    @FXML
+    void btnReturn() {
+        Stage stage = (Stage) btnReturn.getScene().getWindow();
+        nav.goTo(stage, "/mode.fxml");
+    }
 
-            // Générer une nouvelle position aléatoire sans chevauchement
-            boolean overlap;
-            int attempts = 0;
-            double randomX = 0;
-            double randomY = 0;
+    @FXML
+    void btnEnd() {
 
-            do {
-                overlap = false;
-                randomX = Math.random() * maxWidth;
-                randomY = Math.random() * maxHeight;
+        if (party.get(currentPlayerIndex).isBot()) {
+            return;
+        }
+        String result = party.get(currentPlayerIndex).chooseCombination();
 
-                for (int j = 0; j < diceViews.size(); j++) {
-                    if (j == i) continue; // Ne pas comparer avec soi-même
-                    DiceView other = diceViews.get(j);
+        if (!result.isEmpty()) {
+            finishTurn(result);
+        }
 
-                    double x1 = other.getLayoutX();
-                    double y1 = other.getLayoutY();
-                    double x2 = randomX;
-                    double y2 = randomY;
+    }
 
-                    if (x1 < x2 + diceSize && x1 + diceSize > x2 &&
-                            y1 < y2 + diceSize && y1 + diceSize > y2) {
-                        overlap = true;
-                        break;
-                    }
-                }
-                attempts++;
-            } while (overlap && attempts < 100);
-            // Appliquer une rotation aléatoire entre -30 et +30 degrés
-            double randomRotation = -30 + Math.random() * 60;
-            diceView.setRotate(randomRotation);
+    private void finishTurn(String combination) {
+        PlayerModel current = party.get(currentPlayerIndex);
 
-            // Appliquer la nouvelle position
-            diceView.setLayoutX(randomX);
-            diceView.setLayoutY(randomY);
+        if (!current.getScoresheet().containsCombination(CombinationModel.of(combination))) {
+            current.updateScore(CombinationModel.of(combination), board);
+            scrPlayer.setText(current.getScoresheet().toString());
+            // Passer au joueur suivant
+            nextPlayer();
+
+        } else {
+            if (!current.isBot()) { // Ne pas montrer d'erreur pour les bots
+                showError("You have already chosen this combination. \n Please choose another one.");
+            }
         }
     }
 
+    private void nextPlayer() {
+        currentPlayerIndex++;
 
-    // Action liée au bouton retour, pour retourner à l'écran de sélection de mode
-    @FXML
-    void btnReturn(ActionEvent event) {
-        Stage stage = (Stage) btnReturn.getScene().getWindow(); // Récupérer la fenêtre actuelle
-        nav.goTo(stage, "/mode.fxml");                          // Naviguer vers l'écran mode
+        // Si on a fait le tour de tous les joueurs, passer au tour suivant
+        if (currentPlayerIndex >= party.size()) {
+            currentPlayerIndex = 0;
+            currentRound++;
+        }
+        btnEnd.setDisable(true);
+        // Commencer le tour du joueur suivant
+        startNewTurn();
+    }
+    private void endGame() {
+        // Calculer les scores finaux et déterminer le gagnant
+        PlayerModel winner = party.get(0);
+        int maxScore = winner.getScoresheet().scoreTotal();
+
+        for (PlayerModel player : party) {
+            int score = player.getScoresheet().scoreTotal();
+            if (score > maxScore) {
+                maxScore = score;
+                winner = player;
+            }
+        }
+
+        // Afficher le résultat
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Game Over");
+        alert.setHeaderText("Game Finished!");
+
+        StringBuilder results = new StringBuilder("Final Scores:\n\n");
+        for (PlayerModel player : party) {
+            results.append(player.getName()).append(": ").append(player.getScoresheet().scoreTotal()).append(" points\n");
+        }
+        results.append("\nWinner: ").append(winner.getName()).append(" with ").append(maxScore).append(" points!");
+
+        alert.setContentText(results.toString());
+        alert.showAndWait();
+
+        // Retourner au menu principal
+        btnReturn();
+    }
+
+
+    private void showError(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Input Error");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    //Places a cube without intersecting with others
+    private void placeDiceWithoutOverlap(DiceView current, int index) {
+        double diceSize = 114;
+        double maxWidth = anchorDice.getWidth() - diceSize;
+        double maxHeight = anchorDice.getHeight() - diceSize;
+
+        boolean overlap;
+        int attempts = 0;
+        double x;
+        double y;
+
+        do {
+            overlap = false;
+            x = Math.random() * maxWidth;
+            y = Math.random() * maxHeight;
+
+            for (int j = 0; j < diceViews.size(); j++) {
+                if (j == index) continue;
+                DiceView other = diceViews.get(j);
+
+                double x1 = other.getLayoutX();
+                double y1 = other.getLayoutY();
+
+                if (x1 < x + diceSize && x1 + diceSize > x &&
+                        y1 < y + diceSize && y1 + diceSize > y) {
+                    overlap = true;
+                    break;
+                }
+            }
+            attempts++;
+            
+        } while (overlap && attempts < 100);
+
+        current.setPosition(x, y);
+        current.setRandomRotation();
     }
 }
