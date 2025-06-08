@@ -6,6 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" name="Changes" comment="last">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yams/controleur/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/BoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yams/vue/DiceView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/vue/DiceView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/gameBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/gameBoard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gameBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gameBoard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/yams/controleur/BoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/controleur/BoardController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/yams/vue/DiceView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/vue/DiceView.class" afterDir="false" />
     </list>
     <list id="5791d63c-267e-4189-a012-88054f0cdb47" name="Changes by kefae" comment="">
@@ -39,6 +44,20 @@
     "accountId": "de3e4e86-bf29-4bf7-b35f-fb624d3f5304"
   }
 }]]></component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/yams/vue/DiceView.java">
+      <ranges>
+        <range start1="12" end1="13" start2="12" end2="12" changelist="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" />
+        <range start1="15" end1="15" start2="14" end2="17" changelist="5791d63c-267e-4189-a012-88054f0cdb47" />
+        <range start1="19" end1="20" start2="21" end2="22" changelist="5791d63c-267e-4189-a012-88054f0cdb47" />
+        <range start1="22" end1="23" start2="24" end2="25" changelist="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" />
+        <range start1="34" end1="34" start2="36" end2="41" changelist="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" />
+        <range start1="37" end1="38" start2="44" end2="45" changelist="5791d63c-267e-4189-a012-88054f0cdb47" />
+        <range start1="40" end1="40" start2="47" end2="64" changelist="5791d63c-267e-4189-a012-88054f0cdb47" />
+        <range start1="56" end1="61" start2="80" end2="80" changelist="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -177,7 +196,7 @@
       <workItem from="1749142102371" duration="1027000" />
       <workItem from="1749215858584" duration="2440000" />
       <workItem from="1749230102721" duration="14250000" />
-      <workItem from="1749398841885" duration="4069000" />
+      <workItem from="1749398841885" duration="8976000" />
     </task>
     <task id="LOCAL-00001" summary="last">
       <option name="closed" value="true" />
@@ -187,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749402662196</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="last">
+      <option name="closed" value="true" />
+      <created>1749403131109</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1749403131109</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

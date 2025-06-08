@@ -28,7 +28,7 @@
                         <Font size="43.0" />
                      </font>
                   </Button>
-                  <Label style="-fx-background-color: #d4cfcf;" text="Player" textFill="WHITE">
+                  <Label fx:id="roundCount" style="-fx-background-color: #d4cfcf;" text="Player" textFill="WHITE">
                      <font>
                         <Font size="65.0" />
                      </font>

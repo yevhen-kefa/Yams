@@ -10,7 +10,6 @@ import yams.controleur.BoardController;
 
 
 public class DiceView extends StackPane {
-    private final Rectangle background;
     private final Label label;
     private Dice dice;
 
@@ -20,7 +19,7 @@ public class DiceView extends StackPane {
     public DiceView(Dice dice) {
         this.dice = dice;
 
-        background = new Rectangle(SIZE, SIZE);
+        Rectangle background = new Rectangle(SIZE, SIZE);
         background.setArcWidth(20);
         background.setArcHeight(20);
         background.setFill(Color.LIGHTGRAY);
@@ -32,6 +31,11 @@ public class DiceView extends StackPane {
         getChildren().addAll(background, label);
 
         setOnMouseClicked(event -> {
+            // Vérifier si c'est le tour d'un bot
+            if (controller.isCurrentPlayerBot()) {
+                return; // Ne rien faire si c'est le tour d'un bot
+            }
+
             if (getParent() != null && getParent().getClass() == AnchorPane.class) {
                 ((AnchorPane) getParent()).getChildren().remove(this);
             }
@@ -53,11 +57,6 @@ public class DiceView extends StackPane {
     // Set random rotation
     public void setRandomRotation() {
         setRotate(-30 + Math.random() * 60);
-    }
-
-
-    public double getDiceSize() {
-        return SIZE;
     }
 
     public Dice getDice() {

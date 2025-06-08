@@ -10,7 +10,6 @@ import yams.model.NavAgent;
 import yams.model.combinations.CombinationModel;
 import yams.model.game.Board;
 import yams.model.game.Dice;
-import yams.model.players.Bot;
 import yams.model.players.PlayerModel;
 import yams.vue.DiceView;
 
@@ -22,12 +21,12 @@ public class BoardController {
     private final List<DiceView> diceViews = new ArrayList<>();
     private Board board;
     private List<PlayerModel> party;
-    private int currentPlayerIndex = 0;
+    private PlayerModel currentPlayer;
     private boolean canChooseCombination = true;
     private int rollCount = 0;
     private int currentRound = 1;
     private final int MAX_ROUNDS = 7;
-    private VBox staticSaveDice;
+
 
     @FXML
     private Button btnReroll;
@@ -47,20 +46,22 @@ public class BoardController {
     private AnchorPane anchorDice;
     @FXML
     private VBox saveDice;
+    @FXML
+    private Label roundCount;
 
     public void setParty(List<PlayerModel> party) {
         this.party = party;
+        this.currentPlayer = party.get(0);
         updatePlayersDisplay();
         startNewTurn();
     }
 
     private void updatePlayersDisplay() {
         playersVBox.getChildren().clear();
-        for (int i = 0; i < party.size(); i++) {
-            PlayerModel player = party.get(i);
+        for (PlayerModel player : party) {
             Label playerLabel = new Label(player.getName());
 
-            if (i == currentPlayerIndex) {
+            if (player == currentPlayer) {
                 playerLabel.setStyle("-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #FFD700; -fx-background-color: rgba(255,215,0,0.3); -fx-padding: 5;");
             } else {
                 Color fxColor = player.getColor();
@@ -92,38 +93,32 @@ public class BoardController {
         scrPlayer.setText(player.getScoresheet().toString());
     }
 
-    @FXML
-    public void initialize() {
-        board = new Board();
-        btnEnd.setDisable(true);
-        rerollCount.setText("3/3");
-    }
-
-    public void moveToSaved(DiceView diceView) {
-        if (!saveDice.getChildren().contains(diceView)) {
-            diceView.setLayoutX(0);
-            diceView.setLayoutY(0);
-            diceView.setRotate(0);
-            saveDice.getChildren().add(diceView);
+    public void toggleDicePlacement(DiceView die) {
+        if (die.isPermanentlySaved()) {
+            return;
         }
-    }
 
-    public void toggleDicePlacement(DiceView diceView) {
-        if (saveDice.getChildren().contains(diceView)) {
-            saveDice.getChildren().remove(diceView);
-            anchorDice.getChildren().add(diceView);
-            placeDiceWithoutOverlap(diceView, diceViews.indexOf(diceView));
+        if (saveDice.getChildren().contains(die)) {
+            // Move back to board
+            saveDice.getChildren().remove(die);
+            anchorDice.getChildren().add(die);
+            placeDiceWithoutOverlap(die, diceViews.indexOf(die));
+            die.setSaved(false);
         } else {
-            anchorDice.getChildren().remove(diceView);
-            saveDice.getChildren().add(diceView);
-            diceView.setLayoutX(0);
-            diceView.setLayoutY(0);
-            diceView.setRotate(0);
+            // Move to saveDice
+            anchorDice.getChildren().remove(die);
+            saveDice.getChildren().add(die);
+            die.setLayoutX(0);
+            die.setLayoutY(0);
+            die.setRotate(0);
+            die.setSaved(false);
         }
     }
 
     private void startNewTurn() {
         if (party == null || party.isEmpty()) return;
+        //
+        roundCount.setText("Round " + currentRound + " of " + MAX_ROUNDS);
 
         if (currentRound > MAX_ROUNDS) {
             endGame();
@@ -136,11 +131,12 @@ public class BoardController {
 
         anchorDice.getChildren().clear();
         diceViews.clear();
+        saveDice.getChildren().clear();
 
-        updateCurrentPlayerDisplay(party.get(currentPlayerIndex));
+        updateCurrentPlayerDisplay(currentPlayer);
         updatePlayersDisplay();
 
-        boolean isBot = party.get(currentPlayerIndex).isBot();
+        boolean isBot = currentPlayer.isBot();
 
         if (isBot) {
             btnReroll.setDisable(true);
@@ -166,7 +162,7 @@ public class BoardController {
             try {
                 Thread.sleep(1500);
                 javafx.application.Platform.runLater(() -> {
-                    chooseBestCombinationForBot();
+                    currentPlayer.chooseCombination();
                 });
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
@@ -174,14 +170,9 @@ public class BoardController {
         }).start();
     }
 
-    private void chooseBestCombinationForBot() {
-        Bot currentPlayer = (Bot) party.get(currentPlayerIndex);
-        finishTurn(currentPlayer.chooseCombination());
-    }
-
     @FXML
     void btnReroll() {
-        boolean isBot = party != null && !party.isEmpty() && party.get(currentPlayerIndex).isBot();
+        boolean isBot = currentPlayer.isBot();
 
         if (canChooseCombination && !isBot) {
             btnEnd.setDisable(false);
@@ -203,9 +194,19 @@ public class BoardController {
             btnReroll.setDisable(true);
         }
 
+        //We prohibit reverse movements after this moment.
+        for (DiceView diceView : diceViews) {
+            if (saveDice.getChildren().contains(diceView)) {
+                diceView.setSaved(true);
+                diceView.setPermanentlySaved(true);
+            }
+        }
+
         for (int i = 0; i < 5; i++) {
-            Dice newDice = board.reroll(i);
             DiceView diceView = diceViews.get(i);
+            if (diceView.isSaved()) continue;
+            Dice newDice = board.reroll(i);
+
             diceView.updateDice(newDice);
             placeDiceWithoutOverlap(diceView, i);
         }
@@ -224,10 +225,10 @@ public class BoardController {
 
     @FXML
     void btnEnd() {
-        if (party.get(currentPlayerIndex).isBot()) {
+        if (currentPlayer.isBot()) {
             return;
         }
-        String result = party.get(currentPlayerIndex).chooseCombination();
+        String result = currentPlayer.chooseCombination();
 
         if (!result.isEmpty()) {
             finishTurn(result);
@@ -235,26 +236,27 @@ public class BoardController {
     }
 
     private void finishTurn(String combination) {
-        PlayerModel current = party.get(currentPlayerIndex);
-
-        if (!current.getScoresheet().containsCombination(CombinationModel.of(combination))) {
-            current.updateScore(CombinationModel.of(combination), board);
-            scrPlayer.setText(current.getScoresheet().toString());
+        if (!currentPlayer.getScoresheet().containsCombination(CombinationModel.of(combination))) {
+            currentPlayer.updateScore(CombinationModel.of(combination), board);
+            scrPlayer.setText(currentPlayer.getScoresheet().toString());
             nextPlayer();
         } else {
-            if (!current.isBot()) {
+            if (!currentPlayer.isBot()) {
                 showError("You have already chosen this combination. \n Please choose another one.");
             }
         }
     }
 
     private void nextPlayer() {
-        currentPlayerIndex++;
+        int currentIndex = party.indexOf(currentPlayer);
+        currentIndex++;
 
-        if (currentPlayerIndex >= party.size()) {
-            currentPlayerIndex = 0;
+        if (currentIndex >= party.size()) {
+            currentIndex = 0;
             currentRound++;
         }
+
+        currentPlayer = party.get(currentIndex);
         btnEnd.setDisable(true);
         startNewTurn();
     }
@@ -329,4 +331,19 @@ public class BoardController {
         current.setPosition(x, y);
         current.setRandomRotation();
     }
+
+    public boolean isCurrentPlayerBot() {
+        if (party == null || party.isEmpty()) {
+            return false;
+        }
+        return currentPlayer.isBot();
+    }
+
+    @FXML
+    public void initialize() {
+        board = new Board();
+        btnEnd.setDisable(true);
+        rerollCount.setText("3/3");
+    }
 }
+
