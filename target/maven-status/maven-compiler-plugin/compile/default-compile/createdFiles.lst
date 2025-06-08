@@ -11,10 +11,10 @@ yams\model\combinations\Yahtzee.class
 yams\model\players\PlayerModel.class
 yams\model\players\Scoresheet.class
 yams\model\players\Bot.class
+yams\vue\CombinationSelectionView.class
 yams\controleur\SoloController.class
 yams\model\combinations\FullHouse.class
 yams\controleur\ModeController.class
 yams\model\combinations\SmallStraight.class
 yams\model\NavAgent.class
-yams\vue\ConsoleView.class
 yams\vue\Main.class

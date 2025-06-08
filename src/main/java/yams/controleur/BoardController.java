@@ -12,6 +12,8 @@ import yams.model.game.Board;
 import yams.model.game.Dice;
 import yams.model.players.PlayerModel;
 import yams.vue.DiceView;
+import yams.vue.CombinationSelectionView;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -158,8 +160,29 @@ public class BoardController {
     private void playBotTurn() {
         btnReroll();
 
+        // Random number of rerolls between 1 and 3
+        int numRerolls = (int) (Math.random() * 3) + 1;
+
         new Thread(() -> {
             try {
+                for (int i = 0; i < numRerolls; i++) {
+                    Thread.sleep(1500);
+
+                    // Randomly save/put back 0-5 dice
+                    int numToToggle = (int) (Math.random() * 6);
+                    for (int j = 0; j < numToToggle; j++) {
+                        int diceIndex = (int) (Math.random() * diceViews.size());
+                        DiceView diceToToggle = diceViews.get(diceIndex);
+                        javafx.application.Platform.runLater(() -> {
+                            toggleDicePlacement(diceToToggle);
+                        });
+                    }
+
+                    javafx.application.Platform.runLater(() -> {
+                        btnReroll();
+                    });
+                }
+
                 Thread.sleep(1500);
                 javafx.application.Platform.runLater(() -> {
                     currentPlayer.chooseCombination();
@@ -228,7 +251,9 @@ public class BoardController {
         if (currentPlayer.isBot()) {
             return;
         }
-        String result = currentPlayer.chooseCombination();
+        // Utiliser la vue au lieu du modèle pour l'interaction utilisateur
+        String result = CombinationSelectionView.chooseCombination();
+
 
         if (!result.isEmpty()) {
             finishTurn(result);
