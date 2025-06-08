@@ -165,6 +165,24 @@ public class BoardController {
             saveDice.getChildren().add(diceView);
         }
     }
+    public void toggleDicePlacement(DiceView diceView) {
+        if (saveDice.getChildren().contains(diceView)) {
+            // Видалити з VBox і повернути на дошку
+            saveDice.getChildren().remove(diceView);
+            anchorDice.getChildren().add(diceView);
+
+            // Розмістити без перекриття
+            placeDiceWithoutOverlap(diceView, diceViews.indexOf(diceView));
+        } else {
+            anchorDice.getChildren().remove(diceView);
+            saveDice.getChildren().add(diceView);
+
+            // Скинути позицію/поворот (не обов'язково, але зручно)
+            diceView.setLayoutX(0);
+            diceView.setLayoutY(0);
+            diceView.setRotate(0);
+        }
+    }
 
     // Action liée au bouton de relance des dés
     @FXML

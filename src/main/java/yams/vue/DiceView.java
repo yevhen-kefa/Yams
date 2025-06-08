@@ -37,7 +37,7 @@ public class DiceView extends StackPane {
             if (getParent() != null && getParent().getClass() == AnchorPane.class) {
                 ((AnchorPane) getParent()).getChildren().remove(this);
             }
-            controller.moveToSaved(this);
+            controller.toggleDicePlacement(this);
         });
     }
     // Update dices
