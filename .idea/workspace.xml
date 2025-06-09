@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" name="Changes" comment="last">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
-    <list id="5791d63c-267e-4189-a012-88054f0cdb47" name="Changes by kefae" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/combinations/Chance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/combinations/Chance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/combinations/FourOfAKind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/combinations/FourOfAKind.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/combinations/LargeStraight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/combinations/LargeStraight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/combinations/SmallStraight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/combinations/SmallStraight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/combinations/ThreeOfAKind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/combinations/ThreeOfAKind.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/combinations/Yahtzee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/combinations/Yahtzee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/vue/DiceView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/vue/DiceView.java" afterDir="false" />
-    </list>
+    <list default="true" id="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" name="Changes" comment="last" />
+    <list id="5791d63c-267e-4189-a012-88054f0cdb47" name="Changes by kefae" comment="" />
     <list id="e83d990b-ed2a-47f2-81ef-c4e2ca309973" name="Changes by nachn" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,18 +23,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "redlinka"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;redlinka&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/yevhen-kefa/Yams.git",
-    "accountId": "de3e4e86-bf29-4bf7-b35f-fb624d3f5304"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/yevhen-kefa/Yams.git&quot;,
+    &quot;accountId&quot;: &quot;de3e4e86-bf29-4bf7-b35f-fb624d3f5304&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -60,30 +50,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Maven.yams [javafx:run].executor": "Run",
-    "Maven.yams [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "D:/Cour/Cour_2024/Yams",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/nachn/OneDrive/Documents/GitHub/Yams-main/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.yams [javafx:run].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.yams [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Cour/Cour_2024/Yams&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/nachn/OneDrive/Documents/GitHub/Yams-main/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\resources" />
@@ -105,17 +95,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="Yams" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Yams" />
-      <option name="filePath" />
-      <method v="2" />
     </configuration>
     <configuration name="yams [javafx:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
       <MavenSettings>
