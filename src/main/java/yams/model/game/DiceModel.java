@@ -7,4 +7,7 @@ public interface DiceModel {
     String getSpritePath();
     String name();
     String description();
+
+
 }
+

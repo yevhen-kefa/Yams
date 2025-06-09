@@ -9,7 +9,7 @@ public record DemonicDice(int value) implements DiceModel {
     }
 
     public DemonicDice() {
-        this(6);
+        this(3);
     }
 
     @Override

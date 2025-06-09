@@ -208,10 +208,11 @@ public class BoardController {
 
         if (rollCount == 0) {
             for (int i = 0; i < 5; i++) {
-                DiceModel dice = board.getDice(i);
+                DiceModel dice = board.getDice(i); // ВАЖЛИВО: це мають бути dice, які обрав гравець
                 DiceView diceView = new DiceView(dice, this);
                 diceViews.add(diceView);
                 anchorDice.getChildren().add(diceView);
+                placeDiceWithoutOverlap(diceView, i);
             }
             btnReroll.setText("Reroll");
         } else if (rollCount == 2) {
@@ -219,7 +220,7 @@ public class BoardController {
             btnReroll.setDisable(true);
         }
 
-        //We prohibit reverse movements after this moment.
+        // Заборонити зворотні переміщення після збереження
         for (DiceView diceView : diceViews) {
             if (saveDice.getChildren().contains(diceView)) {
                 diceView.setSaved(true);
@@ -230,8 +231,9 @@ public class BoardController {
         for (int i = 0; i < 5; i++) {
             DiceView diceView = diceViews.get(i);
             if (diceView.isSaved()) continue;
-            DiceModel newDice = board.reroll(i);
 
+            // Важливо: оновлюємо модель в board і одночасно відображення
+            DiceModel newDice = board.reroll(i);
             diceView.updateDice(newDice);
             placeDiceWithoutOverlap(diceView, i);
         }
@@ -241,6 +243,7 @@ public class BoardController {
             rerollCount.setText((3 - rollCount) + "/3");
         }
     }
+
 
     @FXML
     void btnReturn() {

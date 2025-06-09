@@ -14,14 +14,16 @@ public class DiceView extends StackPane {
     private boolean permanentlySaved = false;
 
     private static final double SIZE = 80;
-
+   /* public String getSpritePath() {
+        return "/img/dice/" + type.toString().toLowerCase() + "/" + value + ".png";
+    }*/
     //Sets the design for the dices
     public DiceView(DiceModel dice, BoardController controller) {
         this.dice = dice;
 
-        ImageView background = new ImageView(dice.getSpritePath());
-        background.setFitWidth(SIZE);
-        background.setFitHeight(SIZE);
+        this.background = new ImageView(dice.getSpritePath());
+        this.background.setFitWidth(SIZE);
+        this.background.setFitHeight(SIZE);
 
         getChildren().addAll(background);
 
@@ -37,6 +39,8 @@ public class DiceView extends StackPane {
             controller.toggleDicePlacement(this);
         });
     }
+
+
 
     public boolean isSaved() {
         return save;
@@ -57,7 +61,13 @@ public class DiceView extends StackPane {
     // Update dices
     public void updateDice(DiceModel newDice) {
         this.dice = newDice;
-        background = new ImageView(newDice.getSpritePath());
+        System.out.println("🔁 Updating dice: " + newDice.getType() + " " + newDice.value() + " -> " + newDice.getSpritePath());
+
+        this.getChildren().clear();
+        this.background = new ImageView(newDice.getSpritePath());
+        this.background.setFitWidth(SIZE);
+        this.background.setFitHeight(SIZE);
+        this.getChildren().add(this.background);
     }
 
     //Position dices

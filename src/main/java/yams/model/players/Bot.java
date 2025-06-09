@@ -15,6 +15,7 @@ public class Bot implements PlayerModel {
     private final Set<CombinationModel> usingCombination = new HashSet<>();
     private Color color;
 
+
     @Override
     public void setColor(Color color) {
         this.color = color;

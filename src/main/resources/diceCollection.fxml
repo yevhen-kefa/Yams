@@ -68,7 +68,7 @@
                                         <Font size="31.0" />
                                     </font>
                                 </Label>
-                                <HBox fx:id="HBoxPlay" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="195.0" prefWidth="1286.0" translateY="20.0" />
+                                <HBox fx:id="HBoxPlay" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="195.0" prefWidth="1286.0" spacing="20.0" translateY="20.0" />
                             </children>
                         </StackPane>
                         <StackPane prefHeight="150.0" prefWidth="200.0">
@@ -83,7 +83,7 @@
                                         <Font size="31.0" />
                                     </font>
                                 </Label>
-                                <HBox fx:id="HBoxList" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="335.0" prefWidth="1269.0" translateY="20.0" />
+                                <HBox fx:id="HBoxList" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="335.0" prefWidth="1269.0" spacing="20.0" translateY="20.0" />
                             </children>
                         </StackPane>
                     </children>

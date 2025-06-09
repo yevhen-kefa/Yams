@@ -39,6 +39,7 @@ public class Human implements PlayerModel {
         return scoresheet;
     }
 
+
     @Override
     public void chooseReroll(int number, ArrayList<Integer> choice) {
 

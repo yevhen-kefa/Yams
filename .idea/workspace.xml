@@ -6,8 +6,27 @@
   <component name="ChangeListManager">
     <list default="true" id="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" name="Changes" comment="last">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yams/controleur/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/BoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yams/controleur/DiceCollectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/DiceCollectionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yams/controleur/FriendController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/FriendController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/game/DemonicDice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/game/DemonicDice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/game/DiceFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/game/DiceFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/game/DiceModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/game/DiceModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/players/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/players/Bot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/players/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/players/Human.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/players/PlayerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/players/PlayerModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yams/vue/DiceView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/vue/DiceView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/diceCollection.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/diceCollection.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/dice/demon/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/dice/demon/3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/yams/controleur/BoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/controleur/BoardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/yams/controleur/DiceCollectionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/controleur/DiceCollectionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/yams/controleur/FriendController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/controleur/FriendController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/yams/controleur/SoloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/controleur/SoloController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/yams/model/players/Bot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/model/players/Bot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/yams/model/players/Human.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/model/players/Human.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/yams/vue/DiceView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/vue/DiceView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <list id="cc138a12-ba14-4bd1-bf70-ac57dfebd5f7" name="Changes by kefae" comment="" />
     <list id="e83d990b-ed2a-47f2-81ef-c4e2ca309973" name="Changes by nachn" comment="" />
@@ -65,7 +84,7 @@
     "Maven.yams [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Rebasing main",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "last_opened_file_path": "C:/Users/nachn/OneDrive/Documents/GitHub/Yams/src/main/resources",
@@ -111,17 +130,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="Yams" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Yams" />
-      <option name="filePath" />
-      <method v="2" />
     </configuration>
     <configuration name="yams [javafx:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
       <MavenSettings>

@@ -17,12 +17,12 @@ public interface PlayerModel {
     ArrayList<DiceModel> diceSet = new ArrayList<>();
 
     default List<DiceModel> getSet() {
-        /*diceSet.add(DiceFactory.createDice(STANDARD));
+        diceSet.add(DiceFactory.createDice(STANDARD));
         diceSet.add(DiceFactory.createDice(DEMONIC));
         diceSet.add(DiceFactory.createDice(STANDARD));
         diceSet.add(DiceFactory.createDice(STANDARD));
         diceSet.add(DiceFactory.createDice(STANDARD));
-        diceSet.add(DiceFactory.createDice(STANDARD));*/
+        diceSet.add(DiceFactory.createDice(STANDARD));
         return diceSet;
     }
 
