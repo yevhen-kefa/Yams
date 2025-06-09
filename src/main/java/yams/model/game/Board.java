@@ -24,8 +24,8 @@ public class Board {
     return dices;
   }
 
-  public DiceModel reroll(int index) {
-    StandardDice newDice = new StandardDice();
+  public DiceModel reroll(int index, DiceType type) {
+    DiceModel newDice = DiceFactory.createDice(type);
     dices.set(index, newDice);
     return newDice;
   }

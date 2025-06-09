@@ -208,7 +208,8 @@ public class BoardController {
 
         if (rollCount == 0) {
             for (int i = 0; i < 5; i++) {
-                DiceModel dice = board.getDice(i); // ВАЖЛИВО: це мають бути dice, які обрав гравець
+                DiceModel dice = board.getDice(i);
+
                 DiceView diceView = new DiceView(dice, this);
                 diceViews.add(diceView);
                 anchorDice.getChildren().add(diceView);
@@ -220,7 +221,7 @@ public class BoardController {
             btnReroll.setDisable(true);
         }
 
-        // Заборонити зворотні переміщення після збереження
+        // Prevent reverse moves after saving
         for (DiceView diceView : diceViews) {
             if (saveDice.getChildren().contains(diceView)) {
                 diceView.setSaved(true);
@@ -232,8 +233,8 @@ public class BoardController {
             DiceView diceView = diceViews.get(i);
             if (diceView.isSaved()) continue;
 
-            // Важливо: оновлюємо модель в board і одночасно відображення
-            DiceModel newDice = board.reroll(i);
+            // Important: update the model in the board and the display at the same time
+            DiceModel newDice = board.reroll(i,currentPlayer.getSet().get(i).getType());
             diceView.updateDice(newDice);
             placeDiceWithoutOverlap(diceView, i);
         }

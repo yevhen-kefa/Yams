@@ -23,6 +23,8 @@ import yams.vue.DiceView;
 import java.io.IOException;
 import java.util.List;
 
+import static yams.model.game.DiceType.STANDARD;
+
 public class DiceCollectionController{
     NavAgent nav = new NavAgent();
     private List<PlayerModel> party;
@@ -52,24 +54,24 @@ public class DiceCollectionController{
 
     @FXML
     private void Play(ActionEvent event) {
-        // Якщо поточний гравець - людина, зберігаємо вибрані кубики
         if (!currentPlayer.isBot()) {
             List<DiceModel> selectedDice = HBoxPlay.getChildren().stream()
                     .filter(node -> node instanceof DiceView)
                     .map(node -> ((DiceView) node).getDice())
                     .toList();
 
-            currentPlayer.getSet().clear();
-            currentPlayer.getSet().addAll(selectedDice);
+            currentPlayer.setSet(selectedDice);
         } else {
-            // Для бота додаємо 5 стандартних кубиків автоматично
-            currentPlayer.getSet().clear();
-            for (int i = 0; i < 5; i++) {
-                currentPlayer.getSet().add(DiceFactory.createDice(DiceType.STANDARD));
-            }
+            List<DiceModel> defaultSet = List.of(
+                    DiceFactory.createDice(STANDARD),
+                    DiceFactory.createDice(STANDARD),
+                    DiceFactory.createDice(STANDARD),
+                    DiceFactory.createDice(STANDARD),
+                    DiceFactory.createDice(STANDARD));
+
+            currentPlayer.setSet(defaultSet);
         }
 
-        // Переходимо до наступного гравця
         currentPlayerIndex++;
 
         if (currentPlayerIndex < party.size()) {
@@ -79,15 +81,12 @@ public class DiceCollectionController{
             HBoxList.getChildren().clear();
 
             if (currentPlayer.isBot()) {
-                // Якщо наступний гравець - бот, одразу зробити вибір і перейти далі рекурсивно
-                Play(null);  // Виклик самого себе без події, щоб одразу пройти бота
+                Play(null);
             } else {
-                // Якщо людина - завантажуємо кубики для вибору
                 loadAllDiceSamples();
                 updatePlayButtonState();
             }
         } else {
-            // Всі гравці вибрали — запускаємо гру
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/gameBoard.fxml"));
                 Parent root = loader.load();
@@ -110,7 +109,7 @@ public class DiceCollectionController{
     }
 
     private void loadAllDiceSamples() {
-        addDiceSamples(DiceType.STANDARD, 5);
+        addDiceSamples(STANDARD, 5);
         addDiceSamples(DiceType.HOLY, 3);
         addDiceSamples(DiceType.DEMONIC, 3);
     }
@@ -118,7 +117,7 @@ public class DiceCollectionController{
     private void addDiceSamples(DiceType type, int count) {
         for (int i = 0; i < count; i++) {
             DiceModel dice = DiceFactory.createDice(type);
-            DiceView diceView = new DiceView(dice, null); // Можна передати null або dummy controller, якщо потрібно
+            DiceView diceView = new DiceView(dice, null); // You can pass a null or dummy controller if needed
             diceView.setOnMouseClicked(event -> toggleCollectionPlacement(diceView));
             HBoxList.getChildren().add(diceView);
         }
