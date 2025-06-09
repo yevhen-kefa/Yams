@@ -5,57 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" name="Changes" comment="last">
-      <change afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/DiceCollectionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yams/model/game/DemonicDice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yams/model/game/DiceFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yams/model/game/DiceType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yams/model/game/StUrielDice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/diceCollection.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/controleur/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/BoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/combinations/Chance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/combinations/Chance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/combinations/FourOfAKind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/combinations/FourOfAKind.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/combinations/LargeStraight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/combinations/LargeStraight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/combinations/SmallStraight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/combinations/SmallStraight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/combinations/ThreeOfAKind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/combinations/ThreeOfAKind.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/combinations/Yahtzee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/combinations/Yahtzee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/game/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/game/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/game/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/game/StandardDice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/game/DiceModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/game/DiceModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/players/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/players/Human.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/game/DemonicDice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/game/DemonicDice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/players/PlayerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/players/PlayerModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/vue/DiceView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/vue/DiceView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/Screenshot 2025-06-09 014656.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/dice/standard/choice.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/demon_6.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/dice/demon/6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/st_uriel_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/dice/holy/3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/standard_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/dice/standard/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/standard_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/dice/standard/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/standard_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/dice/standard/3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/standard_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/dice/standard/4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/standard_5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/dice/standard/5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/standard_6.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/dice/standard/6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/standard_joker.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/dice/standard/joker.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/img/hand.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/yams/controleur/BoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/controleur/BoardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/yams/model/combinations/Chance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/model/combinations/Chance.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/yams/model/combinations/FourOfAKind.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/model/combinations/FourOfAKind.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/yams/model/combinations/LargeStraight.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/model/combinations/LargeStraight.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/yams/model/combinations/SmallStraight.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/model/combinations/SmallStraight.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/yams/model/combinations/ThreeOfAKind.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/model/combinations/ThreeOfAKind.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/yams/model/combinations/Yahtzee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/model/combinations/Yahtzee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/yams/model/game/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/model/game/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/yams/model/game/Dice.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/yams/model/game/DiceModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/model/game/DiceModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/yams/model/players/Human.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/model/players/Human.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/yams/model/players/PlayerModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/model/players/PlayerModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/yams/vue/DiceView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/vue/DiceView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
-    <list id="cc138a12-ba14-4bd1-bf70-ac57dfebd5f7" name="Changes by kefae" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/controleur/SoloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/SoloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/DiceList.fxml" beforeDir="false" />
-    </list>
+    <list id="cc138a12-ba14-4bd1-bf70-ac57dfebd5f7" name="Changes by kefae" comment="" />
     <list id="e83d990b-ed2a-47f2-81ef-c4e2ca309973" name="Changes by nachn" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,19 +29,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "redlinka"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;redlinka&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/yevhen-kefa/Yams.git",
-    "accountId": "de3e4e86-bf29-4bf7-b35f-fb624d3f5304"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/yevhen-kefa/Yams.git&quot;,
+    &quot;accountId&quot;: &quot;de3e4e86-bf29-4bf7-b35f-fb624d3f5304&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -110,7 +65,7 @@
     "Maven.yams [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Rebasing main",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "last_opened_file_path": "C:/Users/nachn/OneDrive/Documents/GitHub/Yams/src/main/resources",
