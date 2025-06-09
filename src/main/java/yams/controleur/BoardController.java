@@ -209,9 +209,11 @@ public class BoardController {
         if (rollCount == 0) {
             for (int i = 0; i < 5; i++) {
                 DiceModel dice = board.getDice(i);
+
                 DiceView diceView = new DiceView(dice, this);
                 diceViews.add(diceView);
                 anchorDice.getChildren().add(diceView);
+                placeDiceWithoutOverlap(diceView, i);
             }
             btnReroll.setText("Reroll");
         } else if (rollCount == 2) {
@@ -219,7 +221,7 @@ public class BoardController {
             btnReroll.setDisable(true);
         }
 
-        //We prohibit reverse movements after this moment.
+        // Prevent reverse moves after saving
         for (DiceView diceView : diceViews) {
             if (saveDice.getChildren().contains(diceView)) {
                 diceView.setSaved(true);
@@ -230,8 +232,9 @@ public class BoardController {
         for (int i = 0; i < 5; i++) {
             DiceView diceView = diceViews.get(i);
             if (diceView.isSaved()) continue;
-            DiceModel newDice = board.reroll(i);
 
+            // Important: update the model in the board and the display at the same time
+            DiceModel newDice = board.reroll(i,currentPlayer.getSet().get(i).getType());
             diceView.updateDice(newDice);
             placeDiceWithoutOverlap(diceView, i);
         }
@@ -241,6 +244,7 @@ public class BoardController {
             rerollCount.setText((3 - rollCount) + "/3");
         }
     }
+
 
     @FXML
     void btnReturn() {

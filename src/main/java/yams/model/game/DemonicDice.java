@@ -9,7 +9,7 @@ public record DemonicDice(int value) implements DiceModel {
     }
 
     public DemonicDice() {
-        this(6);
+        this(3);
     }
 
     @Override
@@ -34,7 +34,7 @@ public record DemonicDice(int value) implements DiceModel {
 
     @Override
     public String description() {
-        return "A dice trying its best to equal the number of the beast... always shows 6";
+        return "A dice trying its best to equal the number of the beast... always shows 6. Why do you even have this cursed thing in your collection ???";
     }
 
     @Override

@@ -3,28 +3,17 @@ package yams.model.players;
 import yams.model.combinations.CombinationModel;
 import yams.model.game.Board;
 import javafx.scene.paint.Color;
-import yams.model.game.DiceFactory;
 import yams.model.game.DiceModel;
 
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static yams.model.game.DiceType.*;
-
 public interface PlayerModel {
 
-    ArrayList<DiceModel> diceSet = new ArrayList<>();
+    void setSet(List<DiceModel> choosedSet);
 
-    default List<DiceModel> getSet() {
-        /*diceSet.add(DiceFactory.createDice(STANDARD));
-        diceSet.add(DiceFactory.createDice(DEMONIC));
-        diceSet.add(DiceFactory.createDice(STANDARD));
-        diceSet.add(DiceFactory.createDice(STANDARD));
-        diceSet.add(DiceFactory.createDice(STANDARD));
-        diceSet.add(DiceFactory.createDice(STANDARD));*/
-        return diceSet;
-    }
+    List<DiceModel> getSet();
 
     boolean isBot();
 

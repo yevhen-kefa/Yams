@@ -34,7 +34,7 @@ public record StUrielDice(int value) implements DiceModel {
 
     @Override
     public String description() {
-        return "A very particular dice that always shows 3";
+        return "A very particular dice that always shows 3. It was blessed by St Uriel HIMSELF.";
     }
 
     @Override

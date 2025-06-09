@@ -2,11 +2,9 @@ package yams.model.players;
 
 import javafx.scene.paint.Color;
 import yams.model.combinations.CombinationModel;
+import yams.model.game.DiceModel;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 
 public class Bot implements PlayerModel {
@@ -14,6 +12,19 @@ public class Bot implements PlayerModel {
     private Scoresheet scoresheet;
     private final Set<CombinationModel> usingCombination = new HashSet<>();
     private Color color;
+    private final ArrayList<DiceModel> diceSet = new ArrayList<>();
+
+    @Override
+    public void setSet(List<DiceModel> choosedSet) {
+        this.diceSet.clear();
+        for (DiceModel dice : choosedSet) {
+            this.diceSet.add(dice);
+        }
+    }
+
+    public List<DiceModel> getSet() {
+        return diceSet;
+    }
 
     @Override
     public void setColor(Color color) {

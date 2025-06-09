@@ -36,7 +36,7 @@ public record StandardDice(int value) implements DiceModel {
 
   @Override
   public String description() {
-    return "A very normal dice, averages to 3OU je ne sais pas comment faire mieux";
+    return "A very normal dice, averages to 3 on average. Don't underestimate it. It might prove useful in some situations.";
   }
 
   @Override

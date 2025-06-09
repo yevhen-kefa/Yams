@@ -5,6 +5,8 @@ import javafx.scene.layout.StackPane;
 import yams.controleur.BoardController;
 import yams.model.game.DiceModel;
 
+import static yams.model.game.DiceType.STANDARD;
+
 
 public class DiceView extends StackPane {
     public ImageView background;
@@ -18,10 +20,13 @@ public class DiceView extends StackPane {
     //Sets the design for the dices
     public DiceView(DiceModel dice, BoardController controller) {
         this.dice = dice;
-
-        ImageView background = new ImageView(dice.getSpritePath());
-        background.setFitWidth(SIZE);
-        background.setFitHeight(SIZE);
+        if (controller == null && dice.getType().equals(STANDARD)) {
+            this.background = new ImageView("/img/dice/standard/choice.png");
+        } else {
+            this.background = new ImageView(dice.getSpritePath());
+        }
+        this.background.setFitWidth(SIZE);
+        this.background.setFitHeight(SIZE);
 
         getChildren().addAll(background);
 
@@ -37,6 +42,8 @@ public class DiceView extends StackPane {
             controller.toggleDicePlacement(this);
         });
     }
+
+
 
     public boolean isSaved() {
         return save;
@@ -57,7 +64,13 @@ public class DiceView extends StackPane {
     // Update dices
     public void updateDice(DiceModel newDice) {
         this.dice = newDice;
-        background = new ImageView(newDice.getSpritePath());
+        System.out.println("Updating dice: " + newDice.getType() + " " + newDice.value() + " -> " + newDice.getSpritePath());
+
+        this.getChildren().clear();
+        this.background = new ImageView(newDice.getSpritePath());
+        this.background.setFitWidth(SIZE);
+        this.background.setFitHeight(SIZE);
+        this.getChildren().add(this.background);
     }
 
     //Position dices

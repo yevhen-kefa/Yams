@@ -1,13 +1,29 @@
 package yams.model.players;
 
 import javafx.scene.paint.Color;
+import yams.model.game.DiceModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Human implements PlayerModel {
     // scoresheet de l'humain
     private Scoresheet scoresheet;
     private Color color;
+    private final ArrayList<DiceModel> diceSet = new ArrayList<>();
+
+    @Override
+    public void setSet(List<DiceModel> choosedSet) {
+        this.diceSet.clear();
+        for (DiceModel dice : choosedSet) {
+            this.diceSet.add(dice);
+        }
+    }
+
+    @Override
+    public List<DiceModel> getSet() {
+        return diceSet;
+    }
 
     @Override
     public void setColor(Color color) {
@@ -38,6 +54,7 @@ public class Human implements PlayerModel {
     public Scoresheet getScoresheet() {
         return scoresheet;
     }
+
 
     @Override
     public void chooseReroll(int number, ArrayList<Integer> choice) {

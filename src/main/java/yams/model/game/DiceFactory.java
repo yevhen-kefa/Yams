@@ -8,12 +8,12 @@ public class DiceFactory {
             case DEMONIC -> new DemonicDice();
         };
     }
-
+/*
     public static DiceModel createDice(DiceType type, int value) {
         return switch (type) {
             case STANDARD -> new StandardDice(value);
             case HOLY -> new StUrielDice(value);
             case DEMONIC -> new DemonicDice(value);
         };
-    }
+    }*/
 }
