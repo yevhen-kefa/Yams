@@ -5,13 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" name="Changes" comment="last">
-      <change afterPath="$PROJECT_DIR$/src/main/java/yams/model/game/DiceModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/game/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/game/Board.java" afterDir="false" />
     </list>
     <list id="5791d63c-267e-4189-a012-88054f0cdb47" name="Changes by kefae" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/controleur/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/BoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/game/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/game/Dice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/combinations/Chance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/combinations/Chance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/combinations/FourOfAKind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/combinations/FourOfAKind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/combinations/LargeStraight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/combinations/LargeStraight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/combinations/SmallStraight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/combinations/SmallStraight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/combinations/ThreeOfAKind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/combinations/ThreeOfAKind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/combinations/Yahtzee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/combinations/Yahtzee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yams/vue/DiceView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/vue/DiceView.java" afterDir="false" />
     </list>
     <list id="e83d990b-ed2a-47f2-81ef-c4e2ca309973" name="Changes by nachn" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -180,7 +183,7 @@
       <workItem from="1749142102371" duration="1027000" />
       <workItem from="1749215858584" duration="2440000" />
       <workItem from="1749230102721" duration="14250000" />
-      <workItem from="1749398841885" duration="21929000" />
+      <workItem from="1749398841885" duration="22220000" />
     </task>
     <task id="LOCAL-00001" summary="last">
       <option name="closed" value="true" />

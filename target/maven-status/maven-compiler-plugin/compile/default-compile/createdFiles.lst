@@ -1,6 +1,11 @@
 yams\model\players\Human.class
-yams\model\game\Board.class
 yams\vue\PlayerNameView.class
+yams\model\players\PlayerModel.class
+yams\model\players\Scoresheet.class
+yams\vue\ErrorView.class
+yams\controleur\SoloController.class
+yams\model\game\DiceModel.class
+yams\model\game\Board.class
 yams\model\combinations\LargeStraight.class
 yams\model\combinations\CombinationModel.class
 yams\controleur\NavAgent.class
@@ -10,14 +15,10 @@ yams\model\combinations\FourOfAKind.class
 yams\model\game\Dice.class
 yams\controleur\MenuController.class
 yams\model\combinations\Yahtzee.class
-yams\model\players\PlayerModel.class
-yams\model\players\Scoresheet.class
 yams\vue\GameResultView.class
 yams\model\players\Bot.class
-yams\vue\ErrorView.class
 yams\model\game\GameAgent.class
 yams\vue\CombinationSelectionView.class
-yams\controleur\SoloController.class
 yams\model\combinations\FullHouse.class
 yams\controleur\ModeController.class
 yams\model\combinations\SmallStraight.class

@@ -7,11 +7,12 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import yams.model.game.Dice;
 import yams.controleur.BoardController;
+import yams.model.game.DiceModel;
 
 
 public class DiceView extends StackPane {
     private final Label label;
-    private Dice dice;
+    private DiceModel dice;
 
     private boolean save = false;
     private boolean permanentlySaved = false;
@@ -19,7 +20,7 @@ public class DiceView extends StackPane {
     private static final double SIZE = 80;
 
     //Sets the design for the dices
-    public DiceView(Dice dice, BoardController controller) {
+    public DiceView(DiceModel dice, BoardController controller) {
         this.dice = dice;
 
         Rectangle background = new Rectangle(SIZE, SIZE);
@@ -63,7 +64,7 @@ public class DiceView extends StackPane {
 
 
     // Update dices
-    public void updateDice(Dice newDice) {
+    public void updateDice(DiceModel newDice) {
         this.dice = newDice;
         label.setText(String.valueOf(newDice.value()));
     }
@@ -79,7 +80,7 @@ public class DiceView extends StackPane {
         setRotate(-30 + Math.random() * 60);
     }
 
-    public Dice getDice() {
+    public DiceModel getDice() {
         return dice;
     }
 }
