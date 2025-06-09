@@ -8,10 +8,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import yams.model.NavAgent;
 import yams.model.players.Bot;
 import yams.model.players.Human;
 import yams.model.players.PlayerModel;
+import yams.vue.ErrorView;
+import yams.vue.PlayerNameView;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -71,7 +72,7 @@ public class SoloController {
 
             String name = promptPlayerName(1);
             if (name == null || name.trim().isEmpty()) {
-                showError("Player " + (1) + "'s name cannot be empty.");
+                ErrorView.showError("Invalid name","Player " + (1) + "'s name cannot be empty.");
                 return;
             }
 
@@ -107,21 +108,6 @@ public class SoloController {
         }
     }
     private String promptPlayerName(int playerNumber) {
-        TextInputDialog dialog = new TextInputDialog();
-        dialog.setTitle("Player Name");
-        dialog.setHeaderText(null);
-        dialog.setContentText("Enter name for Player " + playerNumber + ":");
-
-        Optional<String> result = dialog.showAndWait();
-        return result.orElse(null);
+        return PlayerNameView.promptPlayerName(playerNumber);
     }
-
-    private void showError(String message) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Input Error");
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
-
 }

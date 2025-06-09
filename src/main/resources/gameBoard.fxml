@@ -86,7 +86,7 @@
             </VBox>
          </left>
          <top>
-            <Button fx:id="btnReturn" mnemonicParsing="false" onAction="#btnReturn" prefHeight="83.0" prefWidth="259.0" style="-fx-background-color: #B30048;" text="Return" textFill="WHITE" BorderPane.alignment="CENTER">
+            <Button fx:id="btnReturn" mnemonicParsing="false" onAction="#btnReturn" prefHeight="83.0" prefWidth="259.0" style="-fx-background-color: #B30048;" text="Quit Game" textFill="WHITE" BorderPane.alignment="CENTER">
                <font>
                   <Font size="43.0" />
                </font>

@@ -2,6 +2,7 @@ C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\controleur\Boar
 C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\controleur\FriendController.java
 C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\controleur\MenuController.java
 C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\controleur\ModeController.java
+C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\controleur\NavAgent.java
 C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\controleur\SoloController.java
 C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\model\combinations\Chance.java
 C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\model\combinations\CombinationModel.java
@@ -13,11 +14,14 @@ C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\model\combinati
 C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\model\combinations\Yahtzee.java
 C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\model\game\Board.java
 C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\model\game\Dice.java
-C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\model\NavAgent.java
+C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\model\game\GameAgent.java
 C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\model\players\Bot.java
 C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\model\players\Human.java
 C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\model\players\PlayerModel.java
 C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\model\players\Scoresheet.java
 C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\vue\CombinationSelectionView.java
 C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\vue\DiceView.java
+C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\vue\ErrorView.java
+C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\vue\GameResultView.java
 C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\vue\Main.java
+C:\Users\nachn\OneDrive\Documents\GitHub\Yams\src\main\java\yams\vue\PlayerNameView.java

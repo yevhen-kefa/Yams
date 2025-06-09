@@ -6,13 +6,14 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import yams.model.NavAgent;
 import yams.model.combinations.CombinationModel;
 import yams.model.game.Board;
 import yams.model.game.Dice;
 import yams.model.players.PlayerModel;
 import yams.vue.DiceView;
 import yams.vue.CombinationSelectionView;
+import yams.vue.ErrorView;
+import yams.vue.GameResultView;
 
 
 import java.util.ArrayList;
@@ -53,7 +54,7 @@ public class BoardController {
 
     public void setParty(List<PlayerModel> party) {
         this.party = party;
-        this.currentPlayer = party.get(0);
+        this.currentPlayer = party.getFirst();
         updatePlayersDisplay();
         startNewTurn();
     }
@@ -173,14 +174,10 @@ public class BoardController {
                     for (int j = 0; j < numToToggle; j++) {
                         int diceIndex = (int) (Math.random() * diceViews.size());
                         DiceView diceToToggle = diceViews.get(diceIndex);
-                        javafx.application.Platform.runLater(() -> {
-                            toggleDicePlacement(diceToToggle);
-                        });
+                        javafx.application.Platform.runLater(() -> toggleDicePlacement(diceToToggle));
                     }
 
-                    javafx.application.Platform.runLater(() -> {
-                        btnReroll();
-                    });
+                    javafx.application.Platform.runLater(this::btnReroll);
                 }
 
                 Thread.sleep(1500);
@@ -189,7 +186,7 @@ public class BoardController {
                     if (result != null && !result.isEmpty()) {
                         finishTurn(result);
                     } else {
-                        showError("Bot could not choose a combination.");
+                        ErrorView.showError("Invalid Input","Bot could not choose a combination.");
                     }
                 });
             } catch (InterruptedException e) {
@@ -259,7 +256,6 @@ public class BoardController {
         // Utiliser la vue au lieu du modèle pour l'interaction utilisateur
         String result = CombinationSelectionView.chooseCombination();
 
-
         if (!result.isEmpty()) {
             finishTurn(result);
         }
@@ -272,7 +268,7 @@ public class BoardController {
             nextPlayer();
         } else {
             if (!currentPlayer.isBot()) {
-                showError("You have already chosen this combination. \n Please choose another one.");
+                ErrorView.showError("Invalid Input","You have already chosen this combination. \n Please choose another one.");
             }
         }
     }
@@ -292,39 +288,9 @@ public class BoardController {
     }
 
     private void endGame() {
-        PlayerModel winner = party.get(0);
-        int maxScore = winner.getScoresheet().scoreTotal();
-
-        for (PlayerModel player : party) {
-            int score = player.getScoresheet().scoreTotal();
-            if (score > maxScore) {
-                maxScore = score;
-                winner = player;
-            }
-        }
-
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Game Over");
-        alert.setHeaderText("Game Finished!");
-
-        StringBuilder results = new StringBuilder("Final Scores:\n\n");
-        for (PlayerModel player : party) {
-            results.append(player.getName()).append(": ").append(player.getScoresheet().scoreTotal()).append(" points\n");
-        }
-        results.append("\nWinner: ").append(winner.getName()).append(" with ").append(maxScore).append(" points!");
-
-        alert.setContentText(results.toString());
-        alert.showAndWait();
-
+        PlayerModel winner = party.getFirst();
+        GameResultView.showGameResults(party, winner);
         nav.goTo(btnReturn, "/menu.fxml");
-    }
-
-    private void showError(String message) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Input Error");
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
     }
 
     private void placeDiceWithoutOverlap(DiceView current, int index) {

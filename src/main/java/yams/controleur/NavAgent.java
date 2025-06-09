@@ -1,4 +1,4 @@
-package yams.model;
+package yams.controleur;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
