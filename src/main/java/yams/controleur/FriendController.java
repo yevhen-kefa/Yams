@@ -1,7 +1,6 @@
 
 package yams.controleur;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,15 +8,26 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+<<<<<<< HEAD
 import yams.model.NavAgent;
 import yams.model.players.Bot;
 import yams.model.players.Human;
 import yams.model.players.PlayerModel;
+=======
+import yams.model.players.Bot;
+import yams.model.players.Human;
+import yams.model.players.PlayerModel;
+import yams.vue.ErrorView;
+import yams.vue.PlayerNameView;
+>>>>>>> 79cac2900e188a6e1d6c1ae7522a5d54eb7ace14
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+<<<<<<< HEAD
 import java.util.Optional;
+=======
+>>>>>>> 79cac2900e188a6e1d6c1ae7522a5d54eb7ace14
 import java.util.function.UnaryOperator;
 
 public class FriendController {
@@ -50,6 +60,7 @@ public class FriendController {
         };
 
         inputFriends.setTextFormatter(new TextFormatter<>(filter));
+        inputBots.setTextFormatter(new TextFormatter<>(filter));
         btnPlay.disableProperty().bind(inputBots.textProperty().isEmpty());
     }
 
@@ -65,7 +76,10 @@ public class FriendController {
         try {
             int numberOfFriends = Integer.parseInt(inputFriends.getText());
             int numberOfBots = Integer.parseInt(inputBots.getText());
+<<<<<<< HEAD
             int totalPlayers = numberOfFriends + numberOfBots;
+=======
+>>>>>>> 79cac2900e188a6e1d6c1ae7522a5d54eb7ace14
 
             List<PlayerModel> players = new ArrayList<>();
 
@@ -79,7 +93,11 @@ public class FriendController {
             for (int i = 0; i < numberOfFriends; i++) {
                 String name = promptPlayerName(i + 1);
                 if (name == null || name.trim().isEmpty()) {
+<<<<<<< HEAD
                     showError("Player " + (i + 1) + "'s name cannot be empty.");
+=======
+                    ErrorView.showError("Invalid name","Player " + (1) + "'s name cannot be empty.");
+>>>>>>> 79cac2900e188a6e1d6c1ae7522a5d54eb7ace14
                     return;
                 }
 
@@ -97,10 +115,17 @@ public class FriendController {
                 players.add(bot);
             }
 
+<<<<<<< HEAD
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gameBoard.fxml"));
             Parent root = loader.load();
 
             BoardController controller = loader.getController();
+=======
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/diceCollection.fxml"));
+            Parent root = loader.load();
+
+            DiceCollectionController controller = loader.getController();
+>>>>>>> 79cac2900e188a6e1d6c1ae7522a5d54eb7ace14
             controller.setParty(players);
 
             Stage stage = (Stage) btnPlay.getScene().getWindow();
@@ -111,6 +136,7 @@ public class FriendController {
     }
 
     private String promptPlayerName(int playerNumber) {
+<<<<<<< HEAD
         TextInputDialog dialog = new TextInputDialog();
         dialog.setTitle("Player Name");
         dialog.setHeaderText(null);
@@ -126,5 +152,9 @@ public class FriendController {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+=======
+        return PlayerNameView.promptPlayerName(playerNumber);
+
+>>>>>>> 79cac2900e188a6e1d6c1ae7522a5d54eb7ace14
     }
 }

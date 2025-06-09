@@ -33,7 +33,7 @@
                         <Font name="Noto Serif Ethiopic Regular" size="58.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="inputFriends" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#inputFriends" prefHeight="50.0" prefWidth="615.0" promptText="Enter the number: ">
+                  <TextField fx:id="inputFriends" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="615.0" promptText="Enter the number: ">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -43,7 +43,7 @@
                         <Font name="Noto Serif Ethiopic Regular" size="58.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="inputBots" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#inputBots" prefHeight="50.0" prefWidth="615.0" promptText="Enter the number: ">
+                  <TextField fx:id="inputBots" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="615.0" promptText="Enter the number: ">
                      <font>
                         <Font size="24.0" />
                      </font>

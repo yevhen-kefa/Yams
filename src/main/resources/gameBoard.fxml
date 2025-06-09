@@ -28,7 +28,11 @@
                         <Font size="43.0" />
                      </font>
                   </Button>
+<<<<<<< HEAD
                   <Label style="-fx-background-color: #d4cfcf;" text="Player" textFill="WHITE">
+=======
+                  <Label fx:id="roundCount" style="-fx-background-color: #d4cfcf;" text="Player" textFill="WHITE">
+>>>>>>> 79cac2900e188a6e1d6c1ae7522a5d54eb7ace14
                      <font>
                         <Font size="65.0" />
                      </font>
@@ -86,7 +90,7 @@
             </VBox>
          </left>
          <top>
-            <Button fx:id="btnReturn" mnemonicParsing="false" onAction="#btnReturn" prefHeight="83.0" prefWidth="259.0" style="-fx-background-color: #B30048;" text="Return" textFill="WHITE" BorderPane.alignment="CENTER">
+            <Button fx:id="btnReturn" mnemonicParsing="false" onAction="#btnReturn" prefHeight="92.0" prefWidth="370.0" style="-fx-background-color: #B30048;" text="Quit Game" textFill="WHITE" BorderPane.alignment="CENTER">
                <font>
                   <Font size="43.0" />
                </font>

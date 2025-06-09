@@ -3,7 +3,6 @@ package yams.controleur;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import yams.model.NavAgent;
 
 public class ModeController {
     NavAgent nav = new NavAgent();

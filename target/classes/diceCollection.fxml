@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yams.controleur.DiceCollectionController">
+    <children>
+        <ImageView fitHeight="1080" fitWidth="1920" preserveRatio="false">
+            <image>
+                <Image url="@img/bg2.png" />
+            </image>
+        </ImageView>
+        <BorderPane prefHeight="200.0" prefWidth="200.0">
+            <bottom>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="150.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Button fx:id="btnPlay" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#Play" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: #6BB449; -fx-background-radius: 20;" text="Play" textFill="WHITE">
+                            <font>
+                                <Font size="50.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnCancel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#Cancel" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: #932525; -fx-background-radius: 20;" text="Cancel" textFill="#fdfdfd">
+                            <font>
+                                <Font size="40.0" />
+                            </font>
+                        </Button>
+                    </children>
+                    <BorderPane.margin>
+                        <Insets bottom="20.0" />
+                    </BorderPane.margin>
+                </HBox>
+            </bottom>
+            <top>
+                <Label text="Select your dice set" textFill="WHITE" BorderPane.alignment="CENTER">
+                    <font>
+                        <Font size="72.0" />
+                    </font>
+                </Label>
+            </top>
+            <center>
+                <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0" translateX="-94.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label fx:id="playerNom" alignment="CENTER" contentDisplay="CENTER" prefHeight="105.0" prefWidth="1914.0" text="Player" textFill="WHITE">
+                            <font>
+                                <Font size="72.0" />
+                            </font>
+                        </Label>
+                        <StackPane prefHeight="150.0" prefWidth="200.0">
+                            <children>
+                                <ImageView fitHeight="250.0" fitWidth="1300.0" pickOnBounds="true" smooth="false">
+                                    <image>
+                                        <Image url="@img/green.png" />
+                                    </image>
+                                </ImageView>
+                                <Label prefHeight="46.0" prefWidth="163.0" text="Play with:" textFill="WHITE" translateX="-550.0" translateY="-100.0">
+                                    <font>
+                                        <Font size="31.0" />
+                                    </font>
+                                </Label>
+                                <HBox fx:id="HBoxPlay" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="195.0" prefWidth="1286.0" spacing="20.0" translateY="20.0" />
+                            </children>
+                        </StackPane>
+                        <StackPane prefHeight="150.0" prefWidth="200.0">
+                            <children>
+                                <ImageView fitHeight="397.0" fitWidth="1300.0" pickOnBounds="true" smooth="false">
+                                    <image>
+                                        <Image url="@img/green.png" />
+                                    </image>
+                                </ImageView>
+                                <Label prefHeight="46.0" prefWidth="163.0" text="Collection" textFill="WHITE" translateX="-550.0" translateY="-170.0">
+                                    <font>
+                                        <Font size="31.0" />
+                                    </font>
+                                </Label>
+                                <HBox fx:id="HBoxList" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="335.0" prefWidth="1269.0" spacing="20.0" translateY="20.0" />
+                            </children>
+                        </StackPane>
+                    </children>
+                </VBox>
+            </center>
+            <left>
+                <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label prefHeight="76.0" prefWidth="147.0" text="Label">
+                            <font>
+                                <Font size="39.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+            </left>
+        </BorderPane>
+    </children>
+</StackPane>

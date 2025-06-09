@@ -15,6 +15,16 @@ public class Bot implements PlayerModel {
     private final Set<CombinationModel> usingCombination = new HashSet<>();
     private Color color;
 
+
+    @Override
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    @Override
+    public Color getColor() {
+        return color;
+    }
     @Override
     public void setColor(Color color) {
         this.color = color;
@@ -63,12 +73,12 @@ public class Bot implements PlayerModel {
     }
 
     @Override
-    public CombinationModel chooseCombination(String input) {
+    public String chooseCombination() {
 
         if (usingCombination.size() >= 7) {
             return null;
         }
-        CombinationModel combination;
+        String combination;
         int i = 0;
         int max = 50;
         do {
@@ -78,9 +88,9 @@ public class Bot implements PlayerModel {
             if (i > max) {
                 return null;
             }
-        } while (usingCombination.contains(combination));
+        } while (usingCombination.contains(CombinationModel.of(combination)));
         //Adds the combination to the list of combinations the bot is using
-        usingCombination.add(combination);
+        usingCombination.add(CombinationModel.of(combination));
         return combination;
     }
 }

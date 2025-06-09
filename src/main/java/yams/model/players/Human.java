@@ -1,12 +1,14 @@
 package yams.model.players;
 
 import javafx.scene.paint.Color;
+<<<<<<< HEAD
 import yams.model.combinations.CombinationModel;
+=======
+>>>>>>> 79cac2900e188a6e1d6c1ae7522a5d54eb7ace14
 
 import java.util.ArrayList;
 
 public class Human implements PlayerModel {
-
     // scoresheet de l'humain
     private Scoresheet scoresheet;
     private Color color;
@@ -41,6 +43,7 @@ public class Human implements PlayerModel {
         return scoresheet;
     }
 
+
     @Override
     public void chooseReroll(int number, ArrayList<Integer> choice) {
 
@@ -53,14 +56,9 @@ public class Human implements PlayerModel {
         choice.add(number);
     }
 
-    @Override
-    public CombinationModel chooseCombination(String input) {
-            //Choose a combination from a list of valid combinations
-        if (input.isEmpty() || scoresheet.containsCombination(CombinationModel.of(input.toUpperCase()))) {
-            throw new IllegalArgumentException("Invalid combination");
-        }
-        return CombinationModel.of(input.toUpperCase());
-
+    public String chooseCombination() {
+        return null;
     }
+
 
 }

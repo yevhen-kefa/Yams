@@ -6,7 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+<<<<<<< HEAD
         <module name="Yams" />
+=======
+        <module name="yams" />
+>>>>>>> 79cac2900e188a6e1d6c1ae7522a5d54eb7ace14
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

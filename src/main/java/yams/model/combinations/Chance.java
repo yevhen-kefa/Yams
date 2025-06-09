@@ -1,7 +1,7 @@
 package yams.model.combinations;
 
 import yams.model.game.Board;
-import yams.model.game.Dice;
+import yams.model.game.DiceModel;
 
 public record Chance() implements CombinationModel {
   @Override
@@ -12,7 +12,7 @@ public record Chance() implements CombinationModel {
   @Override
   public int score(Board board) {
     int sum = 0;
-    for (Dice dice : board.dices()) {
+    for (DiceModel dice : board.dices()) {
       sum += dice.value();
     }
     return sum;

@@ -4,24 +4,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Board {
-  private final List<Dice> dices = new ArrayList<>();
+  private final List<DiceModel> dices = new ArrayList<>();
 
-  public Board() {
-    for (int i = 0; i < 5; i++) {
-      dices.add(new Dice());
+  public Board(List<DiceModel> set) {
+    for (DiceModel dice : set) {
+      dices.add(dice);
     }
   }
 
-  public List<Dice> dices() {
+  public List<DiceModel> dices() {
     return List.copyOf(dices);
   }
 
-  public Dice getDice(int index) {
+  public DiceModel getDice(int index) {
     return dices.get(index);
   }
 
-  public Dice reroll(int index) {
-    Dice newDice = dices.get(index).reroll();
+  public List<DiceModel> getDice() {
+    return dices;
+  }
+
+  public DiceModel reroll(int index, DiceType type) {
+    DiceModel newDice = DiceFactory.createDice(type);
     dices.set(index, newDice);
     return newDice;
   }
@@ -29,11 +33,10 @@ public class Board {
   @Override
   public String toString() {
     StringBuilder builder = new StringBuilder();
-    for (Dice dice : dices) {
+    for (DiceModel dice : dices) {
       builder.append(dice.toString());
     }
     builder.append("\n").append("-----------------\n");
     return builder.toString();
   }
 }
-

@@ -3,11 +3,29 @@ package yams.model.players;
 import yams.model.combinations.CombinationModel;
 import yams.model.game.Board;
 import javafx.scene.paint.Color;
+<<<<<<< HEAD
+=======
+import yams.model.game.DiceModel;
+>>>>>>> 79cac2900e188a6e1d6c1ae7522a5d54eb7ace14
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface PlayerModel {
+
+    ArrayList<DiceModel> diceSet = new ArrayList<>();
+
+    default void setSet(List<DiceModel> choosedSet) {
+        this.diceSet.clear();
+        for (DiceModel dice : choosedSet) {
+            this.diceSet.add(dice);
+        }
+    }
+
+    default List<DiceModel> getSet() {
+        return diceSet;
+    }
 
     boolean isBot();
 
@@ -33,6 +51,6 @@ public interface PlayerModel {
     void chooseReroll(int number, ArrayList<Integer> choice);
 
     // demande la combination à jouer
-    CombinationModel chooseCombination(String input);
+    String chooseCombination();
 
 }

@@ -8,10 +8,18 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+<<<<<<< HEAD
 import yams.model.NavAgent;
 import yams.model.players.Bot;
 import yams.model.players.Human;
 import yams.model.players.PlayerModel;
+=======
+import yams.model.players.Bot;
+import yams.model.players.Human;
+import yams.model.players.PlayerModel;
+import yams.vue.ErrorView;
+import yams.vue.PlayerNameView;
+>>>>>>> 79cac2900e188a6e1d6c1ae7522a5d54eb7ace14
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -71,7 +79,11 @@ public class SoloController {
 
             String name = promptPlayerName(1);
             if (name == null || name.trim().isEmpty()) {
+<<<<<<< HEAD
                 showError("Player " + (1) + "'s name cannot be empty.");
+=======
+                ErrorView.showError("Invalid name","Player " + (1) + "'s name cannot be empty.");
+>>>>>>> 79cac2900e188a6e1d6c1ae7522a5d54eb7ace14
                 return;
             }
 
@@ -94,10 +106,17 @@ public class SoloController {
             }
 
             // Loading the playing field
+<<<<<<< HEAD
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gameBoard.fxml"));
             Parent root = loader.load();
 
             BoardController controller = loader.getController();
+=======
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/diceCollection.fxml"));
+            Parent root = loader.load();
+
+            DiceCollectionController controller = loader.getController();
+>>>>>>> 79cac2900e188a6e1d6c1ae7522a5d54eb7ace14
             controller.setParty(players);
 
             Stage stage = (Stage) btnPlay.getScene().getWindow();
@@ -105,6 +124,12 @@ public class SoloController {
         } catch (IOException | NumberFormatException e) {
             e.printStackTrace(); // Обробка помилок
         }
+<<<<<<< HEAD
+=======
+    }
+    private String promptPlayerName(int playerNumber) {
+        return PlayerNameView.promptPlayerName(playerNumber);
+>>>>>>> 79cac2900e188a6e1d6c1ae7522a5d54eb7ace14
     }
     private String promptPlayerName(int playerNumber) {
         TextInputDialog dialog = new TextInputDialog();
