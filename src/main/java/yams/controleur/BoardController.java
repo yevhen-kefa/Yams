@@ -8,7 +8,6 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import yams.model.combinations.CombinationModel;
 import yams.model.game.Board;
-import yams.model.game.Dice;
 import yams.model.game.DiceModel;
 import yams.model.players.PlayerModel;
 import yams.vue.DiceView;
@@ -131,7 +130,7 @@ public class BoardController {
 
         rollCount = 0;
         canChooseCombination = true;
-        board = new Board();
+        board = new Board(currentPlayer.getSet());
 
         anchorDice.getChildren().clear();
         diceViews.clear();
@@ -334,13 +333,6 @@ public class BoardController {
             return false;
         }
         return currentPlayer.isBot();
-    }
-
-    @FXML
-    public void initialize() {
-        board = new Board();
-        btnEnd.setDisable(true);
-        rerollCount.setText("3/3");
     }
 }
 

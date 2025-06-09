@@ -1,17 +1,13 @@
 package yams.vue;
-
-import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
-import yams.model.game.Dice;
 import yams.controleur.BoardController;
 import yams.model.game.DiceModel;
 
 
 public class DiceView extends StackPane {
-    private final Label label;
+    public ImageView background;
     private DiceModel dice;
 
     private boolean save = false;
@@ -23,16 +19,11 @@ public class DiceView extends StackPane {
     public DiceView(DiceModel dice, BoardController controller) {
         this.dice = dice;
 
-        Rectangle background = new Rectangle(SIZE, SIZE);
-        background.setArcWidth(20);
-        background.setArcHeight(20);
-        background.setFill(Color.LIGHTGRAY);
-        background.setStroke(Color.DARKGRAY);
+        ImageView background = new ImageView(dice.getSpritePath());
+        background.setFitWidth(SIZE);
+        background.setFitHeight(SIZE);
 
-        label = new Label(String.valueOf(dice.value()));
-        label.setStyle("-fx-font-size: 24px; -fx-font-weight: bold;");
-
-        getChildren().addAll(background, label);
+        getChildren().addAll(background);
 
         setOnMouseClicked(event -> {
             // Vérifier si c'est le tour d'un bot
@@ -66,7 +57,7 @@ public class DiceView extends StackPane {
     // Update dices
     public void updateDice(DiceModel newDice) {
         this.dice = newDice;
-        label.setText(String.valueOf(newDice.value()));
+        background = new ImageView(newDice.getSpritePath());
     }
 
     //Position dices

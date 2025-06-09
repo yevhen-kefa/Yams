@@ -6,9 +6,9 @@ import java.util.List;
 public class Board {
   private final List<DiceModel> dices = new ArrayList<>();
 
-  public Board() {
-    for (int i = 0; i < 5; i++) {
-      dices.add(new Dice());
+  public Board(List<DiceModel> set) {
+    for (DiceModel dice : set) {
+      dices.add(dice);
     }
   }
 
@@ -25,7 +25,7 @@ public class Board {
   }
 
   public DiceModel reroll(int index) {
-    Dice newDice = new Dice();
+    StandardDice newDice = new StandardDice();
     dices.set(index, newDice);
     return newDice;
   }

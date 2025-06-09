@@ -1,15 +1,10 @@
 package yams.model.players;
 
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Dialog;
 import javafx.scene.paint.Color;
-import yams.model.combinations.CombinationModel;
 
 import java.util.ArrayList;
-import java.util.Optional;
 
 public class Human implements PlayerModel {
-
     // scoresheet de l'humain
     private Scoresheet scoresheet;
     private Color color;

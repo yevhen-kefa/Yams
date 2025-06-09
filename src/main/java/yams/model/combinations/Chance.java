@@ -1,7 +1,6 @@
 package yams.model.combinations;
 
 import yams.model.game.Board;
-import yams.model.game.Dice;
 import yams.model.game.DiceModel;
 
 public record Chance() implements CombinationModel {

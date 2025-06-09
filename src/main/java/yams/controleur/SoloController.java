@@ -95,10 +95,10 @@ public class SoloController {
             }
 
             // Loading the playing field
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gameBoard.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/diceCollection.fxml"));
             Parent root = loader.load();
 
-            BoardController controller = loader.getController();
+            DiceCollectionController controller = loader.getController();
             controller.setParty(players);
 
             Stage stage = (Stage) btnPlay.getScene().getWindow();
