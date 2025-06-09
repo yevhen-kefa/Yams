@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 import yams.model.combinations.CombinationModel;
 import yams.model.game.Board;
 import yams.model.game.Dice;
+import yams.model.game.DiceModel;
 import yams.model.players.PlayerModel;
 import yams.vue.DiceView;
 import yams.vue.CombinationSelectionView;
@@ -208,7 +209,7 @@ public class BoardController {
 
         if (rollCount == 0) {
             for (int i = 0; i < 5; i++) {
-                Dice dice = board.getDice(i);
+                DiceModel dice = board.getDice(i);
                 DiceView diceView = new DiceView(dice, this);
                 diceViews.add(diceView);
                 anchorDice.getChildren().add(diceView);
@@ -230,7 +231,7 @@ public class BoardController {
         for (int i = 0; i < 5; i++) {
             DiceView diceView = diceViews.get(i);
             if (diceView.isSaved()) continue;
-            Dice newDice = board.reroll(i);
+            DiceModel newDice = board.reroll(i);
 
             diceView.updateDice(newDice);
             placeDiceWithoutOverlap(diceView, i);

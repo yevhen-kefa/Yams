@@ -5,30 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dcaf15d-482e-4eb7-a979-7d823c39c6d0" name="Changes" comment="last">
-      <change afterPath="$PROJECT_DIR$/src/main/java/yams/model/game/GameAgent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yams/vue/ErrorView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yams/vue/GameResultView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yams/vue/PlayerNameView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yams/model/game/DiceModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/controleur/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/BoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/controleur/FriendController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/FriendController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/controleur/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/controleur/ModeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/ModeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/controleur/SoloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/SoloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/NavAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/NavAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/gameBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/gameBoard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/hand.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gameBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gameBoard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/yams/controleur/BoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/controleur/BoardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/yams/controleur/FriendController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/controleur/FriendController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/yams/controleur/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/controleur/MenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/yams/controleur/ModeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/controleur/ModeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/yams/controleur/SoloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/yams/controleur/SoloController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/yams/model/NavAgent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/game/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/game/Board.java" afterDir="false" />
     </list>
-    <list id="5791d63c-267e-4189-a012-88054f0cdb47" name="Changes by kefae" comment="" />
+    <list id="5791d63c-267e-4189-a012-88054f0cdb47" name="Changes by kefae" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/yams/controleur/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/controleur/BoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yams/model/game/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yams/model/game/Dice.java" afterDir="false" />
+    </list>
     <list id="e83d990b-ed2a-47f2-81ef-c4e2ca309973" name="Changes by nachn" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +23,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -195,7 +180,7 @@
       <workItem from="1749142102371" duration="1027000" />
       <workItem from="1749215858584" duration="2440000" />
       <workItem from="1749230102721" duration="14250000" />
-      <workItem from="1749398841885" duration="21668000" />
+      <workItem from="1749398841885" duration="21929000" />
     </task>
     <task id="LOCAL-00001" summary="last">
       <option name="closed" value="true" />
