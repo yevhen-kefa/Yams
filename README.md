@@ -50,17 +50,61 @@ src/main/java/yams/
 └── vue/              # UI Components (FXML, CSS, View Classes)
 ```
 
-## 🚀 Installation & Run
 
-### Prerequisites:
+## 🚀 How to Run
 
-* Java JDK 17+ (with JavaFX support)
+You don't need an IDE to play the game.\
+You only need **Java** installed on your system.
 
-* Maven / Gradle
 
-1. Clone the repository.
-2. Open the project in your preferred IDE (IntelliJ IDEA recommended).
-3. Run the main entry point: src/main/java/yams/vue/Main.java. 
+### 1. Prerequisites
+
+Make sure you have **Java Runtime Environment (JRE)** or **JDK 17+**
+installed.
+
+Check your Java version:
+
+``` bash
+java -version
+```
+
+
+### 2. Launching the Game
+
+Download the `Yams.jar` file and follow the
+instructions for your operating system.
+
+
+### 🪟 Windows
+
+**Option 1 --- Click & Play**
+
+-   Double-click the `.jar` file.
+
+**Option 2 --- Command Line (recommended)**
+
+1.  Open the folder containing the `.jar` file.
+2.  Right-click → **Open in Terminal / PowerShell**
+3.  Run:
+
+``` powershell
+java -jar Yams.jar
+```
+
+### 🐧 Linux
+
+1.  Open a terminal in the folder containing the `.jar` file.
+2.  (Optional) Make the file executable:
+
+``` bash
+chmod +x Yams.jar
+```
+
+3.  Run the game:
+
+``` bash
+java -jar Yams.jar
+```
 
 
 ## 🔮 Future Roadmap
