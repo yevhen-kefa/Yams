@@ -5,8 +5,7 @@
 > **Status:** Completed (University Project BUT1)
 > **Team:** 2 Developers
 
-![Project Banner](path/to/screenshot.png)
-*(Insert game screenshot here)*
+![Project Banner](./src/assets/Yams.png)
 
 ## 📖 Overview
 
